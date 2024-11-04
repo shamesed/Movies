@@ -1,0 +1,3 @@
+com.example.movies.test
+style WhiteBackgroundDialogTheme
+style WhiteBackgroundTheme

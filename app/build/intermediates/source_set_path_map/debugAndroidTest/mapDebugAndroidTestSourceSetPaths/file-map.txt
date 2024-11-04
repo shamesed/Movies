@@ -1,0 +1,5 @@
+com.example.movies.test.app-core-1.6.1-0 C:\Users\danil\.gradle\caches\transforms-4\40e69e5da8901a18b40f57ab7dcaf252\transformed\core-1.6.1\res
+com.example.movies.test.app-androidTest-1 C:\Users\danil\AndroidStudioProjects\Movies2\app\build\generated\res\resValues\androidTest\debug
+com.example.movies.test.app-mergeDebugAndroidTestResources-2 C:\Users\danil\AndroidStudioProjects\Movies2\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\merged.dir
+com.example.movies.test.app-mergeDebugAndroidTestResources-3 C:\Users\danil\AndroidStudioProjects\Movies2\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\stripped.dir
+com.example.movies.test.app-debugAndroidTest-4 C:\Users\danil\AndroidStudioProjects\Movies2\app\build\intermediates\merged_res\debugAndroidTest\mergeDebugAndroidTestResources

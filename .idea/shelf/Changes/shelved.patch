@@ -1,0 +1,3409 @@
+Index: app/.gitignore
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/.gitignore b/app/.gitignore
+new file mode 100644
+--- /dev/null	(date 1723903777925)
++++ b/app/.gitignore	(date 1723903777925)
+@@ -0,0 +1,1 @@
++/build
+\ No newline at end of file
+Index: gradlew.bat
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/gradlew.bat b/gradlew.bat
+new file mode 100644
+--- /dev/null	(date 1723903777503)
++++ b/gradlew.bat	(date 1723903777503)
+@@ -0,0 +1,89 @@
++@rem
++@rem Copyright 2015 the original author or authors.
++@rem
++@rem Licensed under the Apache License, Version 2.0 (the "License");
++@rem you may not use this file except in compliance with the License.
++@rem You may obtain a copy of the License at
++@rem
++@rem      https://www.apache.org/licenses/LICENSE-2.0
++@rem
++@rem Unless required by applicable law or agreed to in writing, software
++@rem distributed under the License is distributed on an "AS IS" BASIS,
++@rem WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++@rem See the License for the specific language governing permissions and
++@rem limitations under the License.
++@rem
++
++@if "%DEBUG%" == "" @echo off
++@rem ##########################################################################
++@rem
++@rem  Gradle startup script for Windows
++@rem
++@rem ##########################################################################
++
++@rem Set local scope for the variables with windows NT shell
++if "%OS%"=="Windows_NT" setlocal
++
++set DIRNAME=%~dp0
++if "%DIRNAME%" == "" set DIRNAME=.
++set APP_BASE_NAME=%~n0
++set APP_HOME=%DIRNAME%
++
++@rem Resolve any "." and ".." in APP_HOME to make it shorter.
++for %%i in ("%APP_HOME%") do set APP_HOME=%%~fi
++
++@rem Add default JVM options here. You can also use JAVA_OPTS and GRADLE_OPTS to pass JVM options to this script.
++set DEFAULT_JVM_OPTS="-Xmx64m" "-Xms64m"
++
++@rem Find java.exe
++if defined JAVA_HOME goto findJavaFromJavaHome
++
++set JAVA_EXE=java.exe
++%JAVA_EXE% -version >NUL 2>&1
++if "%ERRORLEVEL%" == "0" goto execute
++
++echo.
++echo ERROR: JAVA_HOME is not set and no 'java' command could be found in your PATH.
++echo.
++echo Please set the JAVA_HOME variable in your environment to match the
++echo location of your Java installation.
++
++goto fail
++
++:findJavaFromJavaHome
++set JAVA_HOME=%JAVA_HOME:"=%
++set JAVA_EXE=%JAVA_HOME%/bin/java.exe
++
++if exist "%JAVA_EXE%" goto execute
++
++echo.
++echo ERROR: JAVA_HOME is set to an invalid directory: %JAVA_HOME%
++echo.
++echo Please set the JAVA_HOME variable in your environment to match the
++echo location of your Java installation.
++
++goto fail
++
++:execute
++@rem Setup the command line
++
++set CLASSPATH=%APP_HOME%\gradle\wrapper\gradle-wrapper.jar
++
++
++@rem Execute Gradle
++"%JAVA_EXE%" %DEFAULT_JVM_OPTS% %JAVA_OPTS% %GRADLE_OPTS% "-Dorg.gradle.appname=%APP_BASE_NAME%" -classpath "%CLASSPATH%" org.gradle.wrapper.GradleWrapperMain %*
++
++:end
++@rem End local scope for the variables with windows NT shell
++if "%ERRORLEVEL%"=="0" goto mainEnd
++
++:fail
++rem Set variable GRADLE_EXIT_CONSOLE if you need the _script_ return code instead of
++rem the _cmd.exe /c_ return code!
++if  not "" == "%GRADLE_EXIT_CONSOLE%" exit 1
++exit /b 1
++
++:mainEnd
++if "%OS%"=="Windows_NT" endlocal
++
++:omega
+Index: app/proguard-rules.pro
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/proguard-rules.pro b/app/proguard-rules.pro
+new file mode 100644
+--- /dev/null	(date 1723903778013)
++++ b/app/proguard-rules.pro	(date 1723903778013)
+@@ -0,0 +1,21 @@
++# Add project specific ProGuard rules here.
++# You can control the set of applied configuration files using the
++# proguardFiles setting in build.gradle.
++#
++# For more details, see
++#   http://developer.android.com/guide/developing/tools/proguard.html
++
++# If your project uses WebView with JS, uncomment the following
++# and specify the fully qualified class name to the JavaScript interface
++# class:
++#-keepclassmembers class fqcn.of.javascript.interface.for.webview {
++#   public *;
++#}
++
++# Uncomment this to preserve the line number information for
++# debugging stack traces.
++#-keepattributes SourceFile,LineNumberTable
++
++# If you keep the line number information, uncomment this to
++# hide the original source file name.
++#-renamesourcefileattribute SourceFile
+\ No newline at end of file
+Index: .gitignore
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.gitignore b/.gitignore
+new file mode 100644
+--- /dev/null	(date 1723903777431)
++++ b/.gitignore	(date 1723903777431)
+@@ -0,0 +1,15 @@
++*.iml
++.gradle
++/local.properties
++/.idea/caches
++/.idea/libraries
++/.idea/modules.xml
++/.idea/workspace.xml
++/.idea/navEditor.xml
++/.idea/assetWizardSettings.xml
++.DS_Store
++/build
++/captures
++.externalNativeBuild
++.cxx
++local.properties
+Index: gradle.properties
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>ISO-8859-1
+===================================================================
+diff --git a/gradle.properties b/gradle.properties
+new file mode 100644
+--- /dev/null	(date 1723903777796)
++++ b/gradle.properties	(date 1723903777796)
+@@ -0,0 +1,21 @@
++# Project-wide Gradle settings.
++# IDE (e.g. Android Studio) users:
++# Gradle settings configured through the IDE *will override*
++# any settings specified in this file.
++# For more details on how to configure your build environment visit
++# http://www.gradle.org/docs/current/userguide/build_environment.html
++# Specifies the JVM arguments used for the daemon process.
++# The setting is particularly useful for tweaking memory settings.
++org.gradle.jvmargs=-Xmx2048m -Dfile.encoding=UTF-8
++# When configured, Gradle will run in incubating parallel mode.
++# This option should only be used with decoupled projects. For more details, visit
++# https://developer.android.com/r/tools/gradle-multi-project-decoupled-projects
++# org.gradle.parallel=true
++# AndroidX package structure to make it clearer which packages are bundled with the
++# Android operating system, and which are packaged with your app's APK
++# https://developer.android.com/topic/libraries/support-library/androidx-rn
++android.useAndroidX=true
++# Enables namespacing of each library's R class so that its R class includes only the
++# resources declared in the library itself and none from the library's dependencies,
++# thereby reducing the size of the R class for that library
++android.nonTransitiveRClass=true
+\ No newline at end of file
+Index: build.gradle.kts
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/build.gradle.kts b/build.gradle.kts
+new file mode 100644
+--- /dev/null	(date 1723903778490)
++++ b/build.gradle.kts	(date 1723903778490)
+@@ -0,0 +1,4 @@
++// Top-level build file where you can add configuration options common to all sub-projects/modules.
++plugins {
++    alias(libs.plugins.android.application) apply false
++}
+\ No newline at end of file
+Index: gradlew
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/gradlew b/gradlew
+new file mode 100644
+--- /dev/null	(date 1723903777495)
++++ b/gradlew	(date 1723903777495)
+@@ -0,0 +1,185 @@
++#!/usr/bin/env sh
++
++#
++# Copyright 2015 the original author or authors.
++#
++# Licensed under the Apache License, Version 2.0 (the "License");
++# you may not use this file except in compliance with the License.
++# You may obtain a copy of the License at
++#
++#      https://www.apache.org/licenses/LICENSE-2.0
++#
++# Unless required by applicable law or agreed to in writing, software
++# distributed under the License is distributed on an "AS IS" BASIS,
++# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++# See the License for the specific language governing permissions and
++# limitations under the License.
++#
++
++##############################################################################
++##
++##  Gradle start up script for UN*X
++##
++##############################################################################
++
++# Attempt to set APP_HOME
++# Resolve links: $0 may be a link
++PRG="$0"
++# Need this for relative symlinks.
++while [ -h "$PRG" ] ; do
++    ls=`ls -ld "$PRG"`
++    link=`expr "$ls" : '.*-> \(.*\)$'`
++    if expr "$link" : '/.*' > /dev/null; then
++        PRG="$link"
++    else
++        PRG=`dirname "$PRG"`"/$link"
++    fi
++done
++SAVED="`pwd`"
++cd "`dirname \"$PRG\"`/" >/dev/null
++APP_HOME="`pwd -P`"
++cd "$SAVED" >/dev/null
++
++APP_NAME="Gradle"
++APP_BASE_NAME=`basename "$0"`
++
++# Add default JVM options here. You can also use JAVA_OPTS and GRADLE_OPTS to pass JVM options to this script.
++DEFAULT_JVM_OPTS='"-Xmx64m" "-Xms64m"'
++
++# Use the maximum available, or set MAX_FD != -1 to use that value.
++MAX_FD="maximum"
++
++warn () {
++    echo "$*"
++}
++
++die () {
++    echo
++    echo "$*"
++    echo
++    exit 1
++}
++
++# OS specific support (must be 'true' or 'false').
++cygwin=false
++msys=false
++darwin=false
++nonstop=false
++case "`uname`" in
++  CYGWIN* )
++    cygwin=true
++    ;;
++  Darwin* )
++    darwin=true
++    ;;
++  MINGW* )
++    msys=true
++    ;;
++  NONSTOP* )
++    nonstop=true
++    ;;
++esac
++
++CLASSPATH=$APP_HOME/gradle/wrapper/gradle-wrapper.jar
++
++
++# Determine the Java command to use to start the JVM.
++if [ -n "$JAVA_HOME" ] ; then
++    if [ -x "$JAVA_HOME/jre/sh/java" ] ; then
++        # IBM's JDK on AIX uses strange locations for the executables
++        JAVACMD="$JAVA_HOME/jre/sh/java"
++    else
++        JAVACMD="$JAVA_HOME/bin/java"
++    fi
++    if [ ! -x "$JAVACMD" ] ; then
++        die "ERROR: JAVA_HOME is set to an invalid directory: $JAVA_HOME
++
++Please set the JAVA_HOME variable in your environment to match the
++location of your Java installation."
++    fi
++else
++    JAVACMD="java"
++    which java >/dev/null 2>&1 || die "ERROR: JAVA_HOME is not set and no 'java' command could be found in your PATH.
++
++Please set the JAVA_HOME variable in your environment to match the
++location of your Java installation."
++fi
++
++# Increase the maximum file descriptors if we can.
++if [ "$cygwin" = "false" -a "$darwin" = "false" -a "$nonstop" = "false" ] ; then
++    MAX_FD_LIMIT=`ulimit -H -n`
++    if [ $? -eq 0 ] ; then
++        if [ "$MAX_FD" = "maximum" -o "$MAX_FD" = "max" ] ; then
++            MAX_FD="$MAX_FD_LIMIT"
++        fi
++        ulimit -n $MAX_FD
++        if [ $? -ne 0 ] ; then
++            warn "Could not set maximum file descriptor limit: $MAX_FD"
++        fi
++    else
++        warn "Could not query maximum file descriptor limit: $MAX_FD_LIMIT"
++    fi
++fi
++
++# For Darwin, add options to specify how the application appears in the dock
++if $darwin; then
++    GRADLE_OPTS="$GRADLE_OPTS \"-Xdock:name=$APP_NAME\" \"-Xdock:icon=$APP_HOME/media/gradle.icns\""
++fi
++
++# For Cygwin or MSYS, switch paths to Windows format before running java
++if [ "$cygwin" = "true" -o "$msys" = "true" ] ; then
++    APP_HOME=`cygpath --path --mixed "$APP_HOME"`
++    CLASSPATH=`cygpath --path --mixed "$CLASSPATH"`
++
++    JAVACMD=`cygpath --unix "$JAVACMD"`
++
++    # We build the pattern for arguments to be converted via cygpath
++    ROOTDIRSRAW=`find -L / -maxdepth 1 -mindepth 1 -type d 2>/dev/null`
++    SEP=""
++    for dir in $ROOTDIRSRAW ; do
++        ROOTDIRS="$ROOTDIRS$SEP$dir"
++        SEP="|"
++    done
++    OURCYGPATTERN="(^($ROOTDIRS))"
++    # Add a user-defined pattern to the cygpath arguments
++    if [ "$GRADLE_CYGPATTERN" != "" ] ; then
++        OURCYGPATTERN="$OURCYGPATTERN|($GRADLE_CYGPATTERN)"
++    fi
++    # Now convert the arguments - kludge to limit ourselves to /bin/sh
++    i=0
++    for arg in "$@" ; do
++        CHECK=`echo "$arg"|egrep -c "$OURCYGPATTERN" -`
++        CHECK2=`echo "$arg"|egrep -c "^-"`                                 ### Determine if an option
++
++        if [ $CHECK -ne 0 ] && [ $CHECK2 -eq 0 ] ; then                    ### Added a condition
++            eval `echo args$i`=`cygpath --path --ignore --mixed "$arg"`
++        else
++            eval `echo args$i`="\"$arg\""
++        fi
++        i=`expr $i + 1`
++    done
++    case $i in
++        0) set -- ;;
++        1) set -- "$args0" ;;
++        2) set -- "$args0" "$args1" ;;
++        3) set -- "$args0" "$args1" "$args2" ;;
++        4) set -- "$args0" "$args1" "$args2" "$args3" ;;
++        5) set -- "$args0" "$args1" "$args2" "$args3" "$args4" ;;
++        6) set -- "$args0" "$args1" "$args2" "$args3" "$args4" "$args5" ;;
++        7) set -- "$args0" "$args1" "$args2" "$args3" "$args4" "$args5" "$args6" ;;
++        8) set -- "$args0" "$args1" "$args2" "$args3" "$args4" "$args5" "$args6" "$args7" ;;
++        9) set -- "$args0" "$args1" "$args2" "$args3" "$args4" "$args5" "$args6" "$args7" "$args8" ;;
++    esac
++fi
++
++# Escape application args
++save () {
++    for i do printf %s\\n "$i" | sed "s/'/'\\\\''/g;1s/^/'/;\$s/\$/' \\\\/" ; done
++    echo " "
++}
++APP_ARGS=`save "$@"`
++
++# Collect all arguments for the java command, following the shell quoting and substitution rules
++eval set -- $DEFAULT_JVM_OPTS $JAVA_OPTS $GRADLE_OPTS "\"-Dorg.gradle.appname=$APP_BASE_NAME\"" -classpath "\"$CLASSPATH\"" org.gradle.wrapper.GradleWrapperMain "$APP_ARGS"
++
++exec "$JAVACMD" "$@"
+Index: settings.gradle.kts
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/settings.gradle.kts b/settings.gradle.kts
+new file mode 100644
+--- /dev/null	(date 1723903778277)
++++ b/settings.gradle.kts	(date 1723903778277)
+@@ -0,0 +1,24 @@
++pluginManagement {
++    repositories {
++        google {
++            content {
++                includeGroupByRegex("com\\.android.*")
++                includeGroupByRegex("com\\.google.*")
++                includeGroupByRegex("androidx.*")
++            }
++        }
++        mavenCentral()
++        gradlePluginPortal()
++    }
++}
++dependencyResolutionManagement {
++    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
++    repositories {
++        google()
++        mavenCentral()
++    }
++}
++
++rootProject.name = "Movies"
++include(":app")
++ 
+\ No newline at end of file
+Index: app/src/main/java/com/example/movies/MainActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/movies/MainActivity.java b/app/src/main/java/com/example/movies/MainActivity.java
+new file mode 100644
+--- /dev/null	(date 1724415214488)
++++ b/app/src/main/java/com/example/movies/MainActivity.java	(date 1724415214488)
+@@ -0,0 +1,134 @@
++package com.example.movies;
++
++import android.content.Intent;
++import android.os.Bundle;
++import android.util.Log;
++import android.view.Menu;
++import android.view.MenuItem;
++import android.view.View;
++import android.widget.ProgressBar;
++
++import androidx.activity.EdgeToEdge;
++import androidx.annotation.NonNull;
++import androidx.appcompat.app.AppCompatActivity;
++import androidx.core.graphics.Insets;
++import androidx.core.view.ViewCompat;
++import androidx.core.view.WindowInsetsCompat;
++import androidx.lifecycle.Observer;
++import androidx.lifecycle.ViewModelProvider;
++import androidx.recyclerview.widget.GridLayoutManager;
++import androidx.recyclerview.widget.RecyclerView;
++
++import java.util.List;
++
++import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
++import io.reactivex.rxjava3.functions.Consumer;
++import io.reactivex.rxjava3.schedulers.Schedulers;
++
++public class MainActivity extends AppCompatActivity {
++
++    private MainViewModel viewModel;
++
++    private RecyclerView recyclerViewMovies;
++    private MoviesAdapter moviesAdapter;
++
++    private ProgressBar progressBarLoading;
++
++    @Override
++    protected void onCreate(Bundle savedInstanceState) {
++        super.onCreate(savedInstanceState);
++        setContentView(R.layout.activity_main);
++
++        initViews();
++        moviesAdapter = new MoviesAdapter();
++        recyclerViewMovies.setAdapter(moviesAdapter);
++        recyclerViewMovies.setLayoutManager(new GridLayoutManager(this, 2));
++        viewModel = new ViewModelProvider(this).get(MainViewModel.class);
++        viewModel.getMovies().observe(this, new Observer<List<Movie>>() {
++            @Override
++            public void onChanged(List<Movie> movies) {
++                moviesAdapter.setMovies(movies);
++            }
++        });
++        viewModel.getIsLoading().observe(this, new Observer<Boolean>() {
++            @Override
++            public void onChanged(Boolean isLoading) {
++                if (isLoading) {
++                    progressBarLoading.setVisibility(View.VISIBLE);
++                } else {
++                    progressBarLoading.setVisibility(View.GONE);
++                }
++            }
++        });
++        moviesAdapter.setOnReachEndListener(new MoviesAdapter.OnReachEndListener() {
++            @Override
++            public void onReachEnd() {
++                viewModel.loadMovies();
++            }
++        });
++
++        moviesAdapter.setOnMovieClickListener(new MoviesAdapter.OnMovieClickListener() {
++            @Override
++            public void onMovieClick(Movie movie) {
++                Intent intent = MovieDetailActivity.newIntent(MainActivity.this, movie);
++                startActivity(intent);
++            }
++        });
++    }
++
++    @Override
++    public boolean onCreateOptionsMenu(Menu menu) {
++        getMenuInflater().inflate(R.menu.main_menu, menu);
++        return true;
++    }
++
++    private void initViews() {
++        progressBarLoading = findViewById(R.id.progressBarLoading);
++        recyclerViewMovies = findViewById(R.id.recyclerViewMovies);
++    }
++
++    @Override
++    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
++        if (item.getItemId() == R.id.itemFavourite) {
++            Intent intent = FavouriteMoviesActivity.newIntent(MainActivity.this);
++            startActivity(intent);
++        }
++        return super.onOptionsItemSelected(item);
++    }
++}
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+new file mode 100644
+--- /dev/null	(date 1724037987878)
++++ b/.idea/misc.xml	(date 1724037987878)
+@@ -0,0 +1,9 @@
++<project version="4">
++  <component name="ExternalStorageConfigurationManager" enabled="true" />
++  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="jbr-17" project-jdk-type="JavaSDK">
++    <output url="file://$PROJECT_DIR$/build/classes" />
++  </component>
++  <component name="ProjectType">
++    <option name="id" value="Android" />
++  </component>
++</project>
+\ No newline at end of file
+Index: app/src/test/java/com/example/movies/ExampleUnitTest.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/test/java/com/example/movies/ExampleUnitTest.java b/app/src/test/java/com/example/movies/ExampleUnitTest.java
+new file mode 100644
+--- /dev/null	(date 1723903778825)
++++ b/app/src/test/java/com/example/movies/ExampleUnitTest.java	(date 1723903778825)
+@@ -0,0 +1,17 @@
++package com.example.movies;
++
++import org.junit.Test;
++
++import static org.junit.Assert.*;
++
++/**
++ * Example local unit test, which will execute on the development machine (host).
++ *
++ * @see <a href="http://d.android.com/tools/testing">Testing documentation</a>
++ */
++public class ExampleUnitTest {
++    @Test
++    public void addition_isCorrect() {
++        assertEquals(4, 2 + 2);
++    }
++}
+\ No newline at end of file
+Index: app/src/main/res/xml/data_extraction_rules.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/xml/data_extraction_rules.xml b/app/src/main/res/xml/data_extraction_rules.xml
+new file mode 100644
+--- /dev/null	(date 1723903779456)
++++ b/app/src/main/res/xml/data_extraction_rules.xml	(date 1723903779456)
+@@ -0,0 +1,19 @@
++<?xml version="1.0" encoding="utf-8"?><!--
++   Sample data extraction rules file; uncomment and customize as necessary.
++   See https://developer.android.com/about/versions/12/backup-restore#xml-changes
++   for details.
++-->
++<data-extraction-rules>
++    <cloud-backup>
++        <!-- TODO: Use <include> and <exclude> to control what is backed up.
++        <include .../>
++        <exclude .../>
++        -->
++    </cloud-backup>
++    <!--
++    <device-transfer>
++        <include .../>
++        <exclude .../>
++    </device-transfer>
++    -->
++</data-extraction-rules>
+\ No newline at end of file
+Index: app/src/main/res/xml/backup_rules.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/xml/backup_rules.xml b/app/src/main/res/xml/backup_rules.xml
+new file mode 100644
+--- /dev/null	(date 1723903779446)
++++ b/app/src/main/res/xml/backup_rules.xml	(date 1723903779446)
+@@ -0,0 +1,13 @@
++<?xml version="1.0" encoding="utf-8"?><!--
++   Sample backup rules file; uncomment and customize as necessary.
++   See https://developer.android.com/guide/topics/data/autobackup
++   for details.
++   Note: This file is ignored for devices older that API 31
++   See https://developer.android.com/about/versions/12/backup-restore
++-->
++<full-backup-content>
++    <!--
++   <include domain="sharedpref" path="."/>
++   <exclude domain="sharedpref" path="device.xml"/>
++-->
++</full-backup-content>
+\ No newline at end of file
+Index: app/src/main/res/menu/main_menu.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/menu/main_menu.xml b/app/src/main/res/menu/main_menu.xml
+new file mode 100644
+--- /dev/null	(date 1724171494091)
++++ b/app/src/main/res/menu/main_menu.xml	(date 1724171494091)
+@@ -0,0 +1,6 @@
++<?xml version="1.0" encoding="utf-8"?>
++<menu xmlns:android="http://schemas.android.com/apk/res/android">
++    <item
++        android:id="@+id/itemFavourite"
++        android:title="@string/item_favourite" />
++</menu>
+Index: app/src/androidTest/java/com/example/movies/ExampleInstrumentedTest.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/androidTest/java/com/example/movies/ExampleInstrumentedTest.java b/app/src/androidTest/java/com/example/movies/ExampleInstrumentedTest.java
+new file mode 100644
+--- /dev/null	(date 1723903778885)
++++ b/app/src/androidTest/java/com/example/movies/ExampleInstrumentedTest.java	(date 1723903778885)
+@@ -0,0 +1,26 @@
++package com.example.movies;
++
++import android.content.Context;
++
++import androidx.test.platform.app.InstrumentationRegistry;
++import androidx.test.ext.junit.runners.AndroidJUnit4;
++
++import org.junit.Test;
++import org.junit.runner.RunWith;
++
++import static org.junit.Assert.*;
++
++/**
++ * Instrumented test, which will execute on an Android device.
++ *
++ * @see <a href="http://d.android.com/tools/testing">Testing documentation</a>
++ */
++@RunWith(AndroidJUnit4.class)
++public class ExampleInstrumentedTest {
++    @Test
++    public void useAppContext() {
++        // Context of the app under test.
++        Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
++        assertEquals("com.example.movies", appContext.getPackageName());
++    }
++}
+\ No newline at end of file
+Index: app/src/main/res/layout/movie_item.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/movie_item.xml b/app/src/main/res/layout/movie_item.xml
+new file mode 100644
+--- /dev/null	(date 1724062308018)
++++ b/app/src/main/res/layout/movie_item.xml	(date 1724062308018)
+@@ -0,0 +1,38 @@
++<?xml version="1.0" encoding="utf-8"?>
++<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:app="http://schemas.android.com/apk/res-auto"
++    xmlns:tools="http://schemas.android.com/tools"
++    android:layout_width="match_parent"
++    android:layout_height="wrap_content"
++    app:cardCornerRadius="8dp"
++    app:cardUseCompatPadding="true">
++
++    <androidx.constraintlayout.widget.ConstraintLayout
++        android:layout_width="match_parent"
++        android:layout_height="wrap_content">
++
++        <ImageView
++            android:id="@+id/imageViewPoster"
++            android:layout_width="match_parent"
++            android:layout_height="wrap_content"
++            android:adjustViewBounds="true"
++            android:minHeight="250dp"
++            android:contentDescription="@null"
++            app:layout_constraintTop_toTopOf="parent"
++            tools:src="@tools:sample/avatars" />
++
++        <TextView
++            android:id="@+id/textViewRating"
++            android:layout_width="wrap_content"
++            android:layout_height="wrap_content"
++            android:layout_margin="16dp"
++            android:textColor="@color/white"
++            android:textSize="16sp"
++            app:layout_constraintEnd_toEndOf="parent"
++            app:layout_constraintTop_toTopOf="parent"
++            tools:background="@drawable/circle_green"
++            tools:text="8.0" />
++
++    </androidx.constraintlayout.widget.ConstraintLayout>
++
++</androidx.cardview.widget.CardView>
+\ No newline at end of file
+Index: app/src/main/res/layout/activity_main.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/activity_main.xml b/app/src/main/res/layout/activity_main.xml
+new file mode 100644
+--- /dev/null	(date 1724059786903)
++++ b/app/src/main/res/layout/activity_main.xml	(date 1724059786903)
+@@ -0,0 +1,26 @@
++<?xml version="1.0" encoding="utf-8"?>
++<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:app="http://schemas.android.com/apk/res-auto"
++    xmlns:tools="http://schemas.android.com/tools"
++    android:id="@+id/main"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent"
++    tools:context=".MainActivity">
++
++    <androidx.recyclerview.widget.RecyclerView
++        android:id="@+id/recyclerViewMovies"
++        android:layout_width="match_parent"
++        android:layout_height="match_parent" />
++
++    <ProgressBar
++        android:id="@+id/progressBarLoading"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:visibility="gone"
++        app:layout_constraintBottom_toBottomOf="parent"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toTopOf="parent"
++        tools:visibility="visible" />
++
++</androidx.constraintlayout.widget.ConstraintLayout>
+\ No newline at end of file
+Index: app/src/main/res/layout/review_item.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/review_item.xml b/app/src/main/res/layout/review_item.xml
+new file mode 100644
+--- /dev/null	(date 1724156938602)
++++ b/app/src/main/res/layout/review_item.xml	(date 1724156938602)
+@@ -0,0 +1,43 @@
++<?xml version="1.0" encoding="utf-8"?>
++<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:tools="http://schemas.android.com/tools"
++    android:layout_width="match_parent"
++    android:layout_height="wrap_content"
++    xmlns:app="http://schemas.android.com/apk/res-auto"
++    app:cardUseCompatPadding="true"
++    android:layout_margin="8dp"
++    app:cardCornerRadius="12dp">
++
++    <LinearLayout
++        android:id="@+id/linearLayoutReview"
++        android:layout_width="match_parent"
++        android:layout_height="wrap_content"
++        android:orientation="vertical"
++        android:alpha="0.9"
++        tools:background="@android:color/holo_red_light">
++
++        <TextView
++            android:id="@+id/textViewAuthor"
++            android:layout_width="match_parent"
++            android:layout_height="wrap_content"
++            android:layout_margin="8dp"
++            android:padding="8dp"
++            android:textAlignment="center"
++            android:textColor="@color/white"
++            android:textSize="16sp"
++            android:textStyle="bold"
++            tools:text="User Name" />
++
++        <TextView
++            android:id="@+id/textViewReview"
++            android:layout_width="match_parent"
++            android:layout_height="wrap_content"
++            android:layout_margin="8dp"
++            android:padding="8dp"
++            android:textColor="@color/white"
++            android:textSize="16sp"
++            tools:text="Review" />
++
++    </LinearLayout>
++
++</androidx.cardview.widget.CardView>
+\ No newline at end of file
+Index: app/src/main/res/layout/trailer_item.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/trailer_item.xml b/app/src/main/res/layout/trailer_item.xml
+new file mode 100644
+--- /dev/null	(date 1724147392399)
++++ b/app/src/main/res/layout/trailer_item.xml	(date 1724147392399)
+@@ -0,0 +1,39 @@
++<?xml version="1.0" encoding="utf-8"?>
++<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:app="http://schemas.android.com/apk/res-auto"
++    xmlns:tools="http://schemas.android.com/tools"
++    android:layout_width="match_parent"
++    android:layout_height="wrap_content"
++    android:layout_margin="4dp"
++    app:cardBackgroundColor="@android:color/holo_blue_light"
++    app:cardCornerRadius="8dp"
++    app:cardUseCompatPadding="true">
++
++    <LinearLayout
++        android:layout_width="match_parent"
++        android:layout_height="wrap_content"
++        android:gravity="center"
++        android:orientation="horizontal">
++
++        <TextView
++            android:id="@+id/textViewTrailerName"
++            android:layout_width="0dp"
++            android:layout_height="wrap_content"
++            android:layout_weight="1"
++            android:padding="8dp"
++            android:textColor="@color/white"
++            tools:text="Trailer"
++
++            />
++
++        <ImageView
++            android:id="@+id/imageView"
++            android:layout_width="48dp"
++            android:layout_height="48dp"
++            app:srcCompat="@android:drawable/ic_media_play"
++
++            />
++
++    </LinearLayout>
++
++</androidx.cardview.widget.CardView>
+\ No newline at end of file
+Index: app/src/main/res/layout/activity_favourite_movies.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/activity_favourite_movies.xml b/app/src/main/res/layout/activity_favourite_movies.xml
+new file mode 100644
+--- /dev/null	(date 1724170426720)
++++ b/app/src/main/res/layout/activity_favourite_movies.xml	(date 1724170426720)
+@@ -0,0 +1,7 @@
++<?xml version="1.0" encoding="utf-8"?>
++<androidx.recyclerview.widget.RecyclerView xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:tools="http://schemas.android.com/tools"
++    android:id="@+id/recyclerViewMovies"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent"
++    tools:context=".FavouriteMoviesActivity" />
+\ No newline at end of file
+Index: app/src/main/res/layout/activity_movie_detail.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/activity_movie_detail.xml b/app/src/main/res/layout/activity_movie_detail.xml
+new file mode 100644
+--- /dev/null	(date 1724169823373)
++++ b/app/src/main/res/layout/activity_movie_detail.xml	(date 1724169823373)
+@@ -0,0 +1,83 @@
++<?xml version="1.0" encoding="utf-8"?>
++<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:app="http://schemas.android.com/apk/res-auto"
++    xmlns:tools="http://schemas.android.com/tools"
++    android:id="@+id/main"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent"
++    tools:context=".MovieDetailActivity">
++
++    <androidx.constraintlayout.widget.ConstraintLayout
++        android:layout_width="match_parent"
++        android:layout_height="wrap_content">
++
++
++        <ImageView
++            android:id="@+id/imageViewPoster"
++            android:layout_width="match_parent"
++            android:layout_height="wrap_content"
++            android:adjustViewBounds="true"
++            android:contentDescription="@null"
++            app:layout_constraintTop_toTopOf="parent"
++            tools:src="@tools:sample/avatars" />
++
++        <TextView
++            android:id="@+id/textViewTitle"
++            android:layout_width="match_parent"
++            android:layout_height="wrap_content"
++            android:padding="8dp"
++            android:textSize="16sp"
++            android:textStyle="bold"
++            app:layout_constraintTop_toBottomOf="@id/imageViewPoster"
++            tools:text="Title" />
++
++        <TextView
++            android:id="@+id/textViewYear"
++            android:layout_width="match_parent"
++            android:layout_height="wrap_content"
++            android:padding="8dp"
++            android:textColor="@android:color/holo_blue_light"
++            android:textSize="16sp"
++            app:layout_constraintTop_toBottomOf="@id/textViewTitle"
++            tools:text="2020" />
++
++        <TextView
++            android:id="@+id/textViewDescription"
++            android:layout_width="match_parent"
++            android:layout_height="wrap_content"
++            android:padding="8dp"
++            android:textSize="16sp"
++            app:layout_constraintTop_toBottomOf="@id/textViewYear"
++            tools:text="Description of movie" />
++
++        <androidx.recyclerview.widget.RecyclerView
++            android:id="@+id/recyclerViewTrailers"
++            android:layout_width="match_parent"
++            android:layout_height="wrap_content"
++            android:nestedScrollingEnabled="false"
++            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
++            app:layout_constraintTop_toBottomOf="@id/textViewDescription"
++            tools:listitem="@layout/trailer_item" />
++
++        <androidx.recyclerview.widget.RecyclerView
++            android:id="@+id/recyclerViewReviews"
++            android:layout_width="match_parent"
++            android:layout_height="wrap_content"
++            android:nestedScrollingEnabled="false"
++            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
++            app:layout_constraintTop_toBottomOf="@id/recyclerViewTrailers" />
++
++        <ImageView
++            android:id="@+id/imageViewStar"
++            android:layout_width="wrap_content"
++            android:layout_height="wrap_content"
++            android:layout_margin="16dp"
++            app:layout_constraintBottom_toBottomOf="@id/imageViewPoster"
++            app:layout_constraintEnd_toEndOf="@id/imageViewPoster"
++            app:layout_constraintTop_toBottomOf="@id/imageViewPoster"
++            tools:srcCompat="@android:drawable/btn_star_big_on" />
++
++    </androidx.constraintlayout.widget.ConstraintLayout>
++
++
++</androidx.core.widget.NestedScrollView>
+\ No newline at end of file
+Index: app/src/main/res/values/colors.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/values/colors.xml b/app/src/main/res/values/colors.xml
+new file mode 100644
+--- /dev/null	(date 1723903779417)
++++ b/app/src/main/res/values/colors.xml	(date 1723903779417)
+@@ -0,0 +1,5 @@
++<?xml version="1.0" encoding="utf-8"?>
++<resources>
++    <color name="black">#FF000000</color>
++    <color name="white">#FFFFFFFF</color>
++</resources>
+\ No newline at end of file
+Index: app/src/main/res/values/strings.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/values/strings.xml b/app/src/main/res/values/strings.xml
+new file mode 100644
+--- /dev/null	(date 1724171494095)
++++ b/app/src/main/res/values/strings.xml	(date 1724171494095)
+@@ -0,0 +1,4 @@
++<resources>
++    <string name="app_name">Movies</string>
++    <string name="item_favourite">Избранное</string>
++</resources>
+\ No newline at end of file
+Index: app/src/main/res/values/themes.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/values/themes.xml b/app/src/main/res/values/themes.xml
+new file mode 100644
+--- /dev/null	(date 1724171624608)
++++ b/app/src/main/res/values/themes.xml	(date 1724171624608)
+@@ -0,0 +1,9 @@
++<resources xmlns:tools="http://schemas.android.com/tools">
++    <!-- Base application theme. -->
++    <style name="Base.Theme.Movies" parent="Theme.Material3.DayNight">
++        <!-- Customize your light theme here. -->
++        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
++    </style>
++
++    <style name="Theme.Movies" parent="Base.Theme.Movies" />
++</resources>
+\ No newline at end of file
+Index: app/src/main/res/drawable/ic_launcher_background.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/drawable/ic_launcher_background.xml b/app/src/main/res/drawable/ic_launcher_background.xml
+new file mode 100644
+--- /dev/null	(date 1723903779245)
++++ b/app/src/main/res/drawable/ic_launcher_background.xml	(date 1723903779245)
+@@ -0,0 +1,170 @@
++<?xml version="1.0" encoding="utf-8"?>
++<vector xmlns:android="http://schemas.android.com/apk/res/android"
++    android:width="108dp"
++    android:height="108dp"
++    android:viewportWidth="108"
++    android:viewportHeight="108">
++    <path
++        android:fillColor="#3DDC84"
++        android:pathData="M0,0h108v108h-108z" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M9,0L9,108"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M19,0L19,108"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M29,0L29,108"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M39,0L39,108"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M49,0L49,108"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M59,0L59,108"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M69,0L69,108"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M79,0L79,108"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M89,0L89,108"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M99,0L99,108"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M0,9L108,9"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M0,19L108,19"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M0,29L108,29"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M0,39L108,39"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M0,49L108,49"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M0,59L108,59"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M0,69L108,69"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M0,79L108,79"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M0,89L108,89"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M0,99L108,99"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M19,29L89,29"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M19,39L89,39"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M19,49L89,49"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M19,59L89,59"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M19,69L89,69"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M19,79L89,79"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M29,19L29,89"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M39,19L39,89"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M49,19L49,89"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M59,19L59,89"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M69,19L69,89"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M79,19L79,89"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++</vector>
+Index: app/src/main/res/drawable/circle_green.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/drawable/circle_green.xml b/app/src/main/res/drawable/circle_green.xml
+new file mode 100644
+--- /dev/null	(date 1724060071341)
++++ b/app/src/main/res/drawable/circle_green.xml	(date 1724060071341)
+@@ -0,0 +1,12 @@
++<?xml version="1.0" encoding="utf-8"?>
++<shape xmlns:android="http://schemas.android.com/apk/res/android"
++    android:shape="oval">
++    <solid android:color="@android:color/holo_green_light" />
++
++    <padding
++        android:bottom="8dp"
++        android:left="8dp"
++        android:right="8dp"
++        android:top="8dp" />
++
++</shape>
+\ No newline at end of file
+Index: app/src/main/res/drawable/circle_red.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/drawable/circle_red.xml b/app/src/main/res/drawable/circle_red.xml
+new file mode 100644
+--- /dev/null	(date 1724060681961)
++++ b/app/src/main/res/drawable/circle_red.xml	(date 1724060681961)
+@@ -0,0 +1,12 @@
++<?xml version="1.0" encoding="utf-8"?>
++<shape xmlns:android="http://schemas.android.com/apk/res/android"
++    android:shape="oval">
++    <solid android:color="@android:color/holo_red_light" />
++
++    <padding
++        android:bottom="8dp"
++        android:left="8dp"
++        android:right="8dp"
++        android:top="8dp" />
++
++</shape>
+\ No newline at end of file
+Index: app/src/main/res/drawable/ic_launcher_foreground.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/drawable/ic_launcher_foreground.xml b/app/src/main/res/drawable/ic_launcher_foreground.xml
+new file mode 100644
+--- /dev/null	(date 1723903779266)
++++ b/app/src/main/res/drawable/ic_launcher_foreground.xml	(date 1723903779266)
+@@ -0,0 +1,30 @@
++<vector xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:aapt="http://schemas.android.com/aapt"
++    android:width="108dp"
++    android:height="108dp"
++    android:viewportWidth="108"
++    android:viewportHeight="108">
++    <path android:pathData="M31,63.928c0,0 6.4,-11 12.1,-13.1c7.2,-2.6 26,-1.4 26,-1.4l38.1,38.1L107,108.928l-32,-1L31,63.928z">
++        <aapt:attr name="android:fillColor">
++            <gradient
++                android:endX="85.84757"
++                android:endY="92.4963"
++                android:startX="42.9492"
++                android:startY="49.59793"
++                android:type="linear">
++                <item
++                    android:color="#44000000"
++                    android:offset="0.0" />
++                <item
++                    android:color="#00000000"
++                    android:offset="1.0" />
++            </gradient>
++        </aapt:attr>
++    </path>
++    <path
++        android:fillColor="#FFFFFF"
++        android:fillType="nonZero"
++        android:pathData="M65.3,45.828l3.8,-6.6c0.2,-0.4 0.1,-0.9 -0.3,-1.1c-0.4,-0.2 -0.9,-0.1 -1.1,0.3l-3.9,6.7c-6.3,-2.8 -13.4,-2.8 -19.7,0l-3.9,-6.7c-0.2,-0.4 -0.7,-0.5 -1.1,-0.3C38.8,38.328 38.7,38.828 38.9,39.228l3.8,6.6C36.2,49.428 31.7,56.028 31,63.928h46C76.3,56.028 71.8,49.428 65.3,45.828zM43.4,57.328c-0.8,0 -1.5,-0.5 -1.8,-1.2c-0.3,-0.7 -0.1,-1.5 0.4,-2.1c0.5,-0.5 1.4,-0.7 2.1,-0.4c0.7,0.3 1.2,1 1.2,1.8C45.3,56.528 44.5,57.328 43.4,57.328L43.4,57.328zM64.6,57.328c-0.8,0 -1.5,-0.5 -1.8,-1.2s-0.1,-1.5 0.4,-2.1c0.5,-0.5 1.4,-0.7 2.1,-0.4c0.7,0.3 1.2,1 1.2,1.8C66.5,56.528 65.6,57.328 64.6,57.328L64.6,57.328z"
++        android:strokeWidth="1"
++        android:strokeColor="#00000000" />
++</vector>
+\ No newline at end of file
+Index: app/src/main/res/drawable/circle_orange.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/drawable/circle_orange.xml b/app/src/main/res/drawable/circle_orange.xml
+new file mode 100644
+--- /dev/null	(date 1724060720323)
++++ b/app/src/main/res/drawable/circle_orange.xml	(date 1724060720323)
+@@ -0,0 +1,12 @@
++<?xml version="1.0" encoding="utf-8"?>
++<shape xmlns:android="http://schemas.android.com/apk/res/android"
++    android:shape="oval">
++    <solid android:color="@android:color/holo_orange_light" />
++
++    <padding
++        android:bottom="8dp"
++        android:left="8dp"
++        android:right="8dp"
++        android:top="8dp" />
++
++</shape>
+\ No newline at end of file
+Index: app/src/main/res/values-night/themes.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/values-night/themes.xml b/app/src/main/res/values-night/themes.xml
+new file mode 100644
+--- /dev/null	(date 1724171624612)
++++ b/app/src/main/res/values-night/themes.xml	(date 1724171624612)
+@@ -0,0 +1,7 @@
++<resources xmlns:tools="http://schemas.android.com/tools">
++    <!-- Base application theme. -->
++    <style name="Base.Theme.Movies" parent="Theme.Material3.DayNight">
++        <!-- Customize your dark theme here. -->
++        <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
++    </style>
++</resources>
+\ No newline at end of file
+Index: app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml b/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml
+new file mode 100644
+--- /dev/null	(date 1723903779278)
++++ b/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml	(date 1723903779278)
+@@ -0,0 +1,6 @@
++<?xml version="1.0" encoding="utf-8"?>
++<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
++    <background android:drawable="@drawable/ic_launcher_background" />
++    <foreground android:drawable="@drawable/ic_launcher_foreground" />
++    <monochrome android:drawable="@drawable/ic_launcher_foreground" />
++</adaptive-icon>
+\ No newline at end of file
+Index: app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml b/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml
+new file mode 100644
+--- /dev/null	(date 1723903778918)
++++ b/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml	(date 1723903778918)
+@@ -0,0 +1,6 @@
++<?xml version="1.0" encoding="utf-8"?>
++<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
++    <background android:drawable="@drawable/ic_launcher_background" />
++    <foreground android:drawable="@drawable/ic_launcher_foreground" />
++    <monochrome android:drawable="@drawable/ic_launcher_foreground" />
++</adaptive-icon>
+\ No newline at end of file
+Index: gradle/libs.versions.toml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/gradle/libs.versions.toml b/gradle/libs.versions.toml
+new file mode 100644
+--- /dev/null	(date 1723905168118)
++++ b/gradle/libs.versions.toml	(date 1723905168118)
+@@ -0,0 +1,36 @@
++[versions]
++agp = "8.5.2"
++glide = "4.16.0"
++junit = "4.13.2"
++junitVersion = "1.2.1"
++espressoCore = "3.6.1"
++appcompat = "1.7.0"
++material = "1.12.0"
++activity = "1.9.1"
++constraintlayout = "2.1.4"
++retrofit = "2.11.0"
++roomRuntime = "2.6.1"
++rxandroid = "3.0.2"
++rxjava = "3.1.8"
++
++[libraries]
++adapter-rxjava3 = { module = "com.squareup.retrofit2:adapter-rxjava3", version.ref = "retrofit" }
++converter-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "retrofit" }
++glide = { module = "com.github.bumptech.glide:glide", version.ref = "glide" }
++junit = { group = "junit", name = "junit", version.ref = "junit" }
++ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
++espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
++appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
++material = { group = "com.google.android.material", name = "material", version.ref = "material" }
++activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
++constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
++retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
++room-compiler = { module = "androidx.room:room-compiler", version.ref = "roomRuntime" }
++room-runtime = { module = "androidx.room:room-runtime", version.ref = "roomRuntime" }
++room-rxjava3 = { module = "androidx.room:room-rxjava3", version.ref = "roomRuntime" }
++rxandroid = { module = "io.reactivex.rxjava3:rxandroid", version.ref = "rxandroid" }
++rxjava = { module = "io.reactivex.rxjava3:rxjava", version.ref = "rxjava" }
++
++[plugins]
++android-application = { id = "com.android.application", version.ref = "agp" }
++
+Index: app/build.gradle.kts
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/build.gradle.kts b/app/build.gradle.kts
+new file mode 100644
+--- /dev/null	(date 1723905168122)
++++ b/app/build.gradle.kts	(date 1723905168122)
+@@ -0,0 +1,57 @@
++plugins {
++    alias(libs.plugins.android.application)
++}
++
++android {
++    namespace = "com.example.movies"
++    compileSdk = 34
++
++    defaultConfig {
++        applicationId = "com.example.movies"
++        minSdk = 24
++        targetSdk = 34
++        versionCode = 1
++        versionName = "1.0"
++
++        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
++    }
++
++    buildTypes {
++        release {
++            isMinifyEnabled = false
++            proguardFiles(
++                getDefaultProguardFile("proguard-android-optimize.txt"),
++                "proguard-rules.pro"
++            )
++        }
++    }
++    compileOptions {
++        sourceCompatibility = JavaVersion.VERSION_1_8
++        targetCompatibility = JavaVersion.VERSION_1_8
++    }
++}
++
++dependencies {
++
++    implementation (libs.retrofit)
++    implementation (libs.converter.gson)
++    implementation (libs.adapter.rxjava3)
++
++    implementation (libs.rxandroid)
++    implementation (libs.rxjava)
++
++    implementation (libs.room.runtime)
++    annotationProcessor (libs.room.compiler)
++    implementation (libs.room.rxjava3)
++
++    implementation (libs.glide)
++
++    implementation(libs.appcompat)
++    implementation(libs.material)
++    implementation(libs.activity)
++    implementation(libs.constraintlayout)
++
++    testImplementation(libs.junit)
++    androidTestImplementation(libs.ext.junit)
++    androidTestImplementation(libs.espresso.core)
++}
+\ No newline at end of file
+Index: app/src/main/AndroidManifest.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/AndroidManifest.xml b/app/src/main/AndroidManifest.xml
+new file mode 100644
+--- /dev/null	(date 1724170088461)
++++ b/app/src/main/AndroidManifest.xml	(date 1724170088461)
+@@ -0,0 +1,34 @@
++<?xml version="1.0" encoding="utf-8"?>
++<manifest xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:tools="http://schemas.android.com/tools">
++
++    <uses-permission android:name="android.permission.INTERNET" />
++
++    <application
++        android:allowBackup="true"
++        android:dataExtractionRules="@xml/data_extraction_rules"
++        android:fullBackupContent="@xml/backup_rules"
++        android:icon="@mipmap/ic_launcher"
++        android:label="@string/app_name"
++        android:roundIcon="@mipmap/ic_launcher_round"
++        android:supportsRtl="true"
++        android:theme="@style/Theme.Movies"
++        tools:targetApi="31">
++        <activity
++            android:name=".FavouriteMoviesActivity"
++            android:exported="false" />
++        <activity
++            android:name=".MovieDetailActivity"
++            android:exported="false" />
++        <activity
++            android:name=".MainActivity"
++            android:exported="true">
++            <intent-filter>
++                <action android:name="android.intent.action.MAIN" />
++
++                <category android:name="android.intent.category.LAUNCHER" />
++            </intent-filter>
++        </activity>
++    </application>
++
++</manifest>
+\ No newline at end of file
+Index: app/src/main/java/com/example/movies/Poster.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/movies/Poster.java b/app/src/main/java/com/example/movies/Poster.java
+new file mode 100644
+--- /dev/null	(date 1724065294738)
++++ b/app/src/main/java/com/example/movies/Poster.java	(date 1724065294738)
+@@ -0,0 +1,26 @@
++package com.example.movies;
++
++import com.google.gson.annotations.SerializedName;
++
++import java.io.Serializable;
++
++public class Poster implements Serializable {
++
++    @SerializedName("url")
++    private String url;
++
++    public Poster(String url) {
++        this.url = url;
++    }
++
++    public String getUrl() {
++        return url;
++    }
++
++    @Override
++    public String toString() {
++        return "Poster{" +
++                "url='" + url + '\'' +
++                '}';
++    }
++}
+Index: .idea/migrations.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/migrations.xml b/.idea/migrations.xml
+new file mode 100644
+--- /dev/null	(date 1723903785015)
++++ b/.idea/migrations.xml	(date 1723903785015)
+@@ -0,0 +1,10 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="ProjectMigrations">
++    <option name="MigrateToGradleLocalJavaHome">
++      <set>
++        <option value="$PROJECT_DIR$" />
++      </set>
++    </option>
++  </component>
++</project>
+\ No newline at end of file
+Index: app/src/main/java/com/example/movies/MainViewModel.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/movies/MainViewModel.java b/app/src/main/java/com/example/movies/MainViewModel.java
+new file mode 100644
+--- /dev/null	(date 1724063394721)
++++ b/app/src/main/java/com/example/movies/MainViewModel.java	(date 1724063394721)
+@@ -0,0 +1,111 @@
++package com.example.movies;
++
++import android.app.Application;
++import android.util.Log;
++
++import androidx.annotation.NonNull;
++import androidx.lifecycle.AndroidViewModel;
++import androidx.lifecycle.LiveData;
++import androidx.lifecycle.MutableLiveData;
++
++import java.util.List;
++
++import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
++import io.reactivex.rxjava3.disposables.CompositeDisposable;
++import io.reactivex.rxjava3.disposables.Disposable;
++import io.reactivex.rxjava3.functions.Action;
++import io.reactivex.rxjava3.functions.Consumer;
++import io.reactivex.rxjava3.schedulers.Schedulers;
++
++public class MainViewModel extends AndroidViewModel {
++
++    private static final String TAG = "MainViewModel";
++
++    private final MutableLiveData<List<Movie>> movies = new MutableLiveData<>();
++    private final MutableLiveData<Boolean> isLoading = new MutableLiveData<>(false);
++
++    private final CompositeDisposable compositeDisposable = new CompositeDisposable();
++
++    private int page = 1;
++
++    public MainViewModel(@NonNull Application application) {
++        super(application);
++        loadMovies();
++    }
++
++    public LiveData<List<Movie>> getMovies() {
++        return movies;
++    }
++
++    public LiveData<Boolean> getIsLoading() {
++        return isLoading;
++    }
++
++    public void loadMovies() {
++        Boolean loading = isLoading.getValue();
++        if (loading != null && loading) {
++            return;
++        }
++        Disposable disposable = ApiFactory.apiService.loadMovies(page)
++                .subscribeOn(Schedulers.io())
++                .observeOn(AndroidSchedulers.mainThread())
++                .doOnSubscribe(new Consumer<Disposable>() {
++                    @Override
++                    public void accept(Disposable disposable) throws Throwable {
++                        isLoading.setValue(true);
++                    }
++                })
++                .doAfterTerminate(new Action() {
++                    @Override
++                    public void run() throws Throwable {
++                        isLoading.setValue(false);
++                    }
++                })
++                .subscribe(new Consumer<MovieResponse>() {
++                    @Override
++                    public void accept(MovieResponse movieResponse) throws Throwable {
++                        List<Movie> loadedMovies = movies.getValue();
++                        if (loadedMovies != null) {
++                            loadedMovies.addAll(movieResponse.getMovies());
++                            movies.setValue(loadedMovies);
++                        } else {
++                            movies.setValue(movieResponse.getMovies());
++                        }
++                        Log.d(TAG, "Loaded:" + page);
++                        page++;
++                    }
++                }, new Consumer<Throwable>() {
++                    @Override
++                    public void accept(Throwable throwable) throws Throwable {
++                        Log.d(TAG, throwable.toString());
++                    }
++                });
++        compositeDisposable.add(disposable);
++    }
++
++    @Override
++    protected void onCleared() {
++        super.onCleared();
++        compositeDisposable.dispose();
++    }
++}
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
+Index: .idea/.gitignore
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/.gitignore b/.idea/.gitignore
+new file mode 100644
+--- /dev/null	(date 1723903785254)
++++ b/.idea/.gitignore	(date 1723903785254)
+@@ -0,0 +1,3 @@
++# Default ignored files
++/shelf/
++/workspace.xml
+Index: app/src/main/java/com/example/movies/TrailersList.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/movies/TrailersList.java b/app/src/main/java/com/example/movies/TrailersList.java
+new file mode 100644
+--- /dev/null	(date 1724067004845)
++++ b/app/src/main/java/com/example/movies/TrailersList.java	(date 1724067004845)
+@@ -0,0 +1,27 @@
++package com.example.movies;
++
++import com.google.gson.annotations.SerializedName;
++
++import java.io.Serializable;
++import java.util.List;
++
++public class TrailersList implements Serializable {
++
++    @SerializedName("trailers")
++    private List<Trailer> trailers;
++
++    public TrailersList(List<Trailer> trailers) {
++        this.trailers = trailers;
++    }
++
++    public List<Trailer> getTrailers() {
++        return trailers;
++    }
++
++    @Override
++    public String toString() {
++        return "TrailersList{" +
++                "trailers=" + trailers +
++                '}';
++    }
++}
+Index: app/src/main/java/com/example/movies/TrailerResponse.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/movies/TrailerResponse.java b/app/src/main/java/com/example/movies/TrailerResponse.java
+new file mode 100644
+--- /dev/null	(date 1724067004850)
++++ b/app/src/main/java/com/example/movies/TrailerResponse.java	(date 1724067004850)
+@@ -0,0 +1,26 @@
++package com.example.movies;
++
++import com.google.gson.annotations.SerializedName;
++
++import java.io.Serializable;
++
++public class TrailerResponse implements Serializable {
++
++    @SerializedName("videos")
++    private TrailersList trailersList;
++
++    public TrailerResponse(TrailersList trailersList) {
++        this.trailersList = trailersList;
++    }
++
++    public TrailersList getTrailersList() {
++        return trailersList;
++    }
++
++    @Override
++    public String toString() {
++        return "TrailerResponse{" +
++                "trailersList=" + trailersList +
++                '}';
++    }
++}
+Index: .idea/compiler.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/compiler.xml b/.idea/compiler.xml
+new file mode 100644
+--- /dev/null	(date 1723903806251)
++++ b/.idea/compiler.xml	(date 1723903806251)
+@@ -0,0 +1,6 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="CompilerConfiguration">
++    <bytecodeTargetLevel target="17" />
++  </component>
++</project>
+\ No newline at end of file
+Index: app/src/main/java/com/example/movies/Review.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/movies/Review.java b/app/src/main/java/com/example/movies/Review.java
+new file mode 100644
+--- /dev/null	(date 1724152160331)
++++ b/app/src/main/java/com/example/movies/Review.java	(date 1724152160331)
+@@ -0,0 +1,45 @@
++package com.example.movies;
++
++import com.google.gson.annotations.SerializedName;
++
++import java.io.Serializable;
++
++public class Review{
++
++    @SerializedName("review")
++    private String review;
++
++    @SerializedName("author")
++    private String author;
++
++    @SerializedName("type")
++    private String type;
++
++    public Review(String review, String author, String type) {
++        this.review = review;
++        this.author = author;
++        this.type = type;
++    }
++
++    public String getReview() {
++        return review;
++    }
++
++    public String getAuthor() {
++        return author;
++    }
++
++    public String getType() {
++        return type;
++    }
++
++
++    @Override
++    public String toString() {
++        return "Review{" +
++                "review='" + review + '\'' +
++                ", author='" + author + '\'' +
++                ", type='" + type + '\'' +
++                '}';
++    }
++}
+Index: .idea/deploymentTargetSelector.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/deploymentTargetSelector.xml b/.idea/deploymentTargetSelector.xml
+new file mode 100644
+--- /dev/null	(date 1730705834388)
++++ b/.idea/deploymentTargetSelector.xml	(date 1730705834388)
+@@ -0,0 +1,18 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="deploymentTargetSelector">
++    <selectionStates>
++      <SelectionState runConfigName="app">
++        <option name="selectionMode" value="DROPDOWN" />
++        <DropdownSelection timestamp="2024-11-04T07:29:58.213049800Z">
++          <Target type="DEFAULT_BOOT">
++            <handle>
++              <DeviceId pluginId="LocalEmulator" identifier="path=C:\Users\danil\.android\avd\PX_6.avd" />
++            </handle>
++          </Target>
++        </DropdownSelection>
++        <DialogSelection />
++      </SelectionState>
++    </selectionStates>
++  </component>
++</project>
+\ No newline at end of file
+Index: app/src/main/java/com/example/movies/ReviewResponse.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/movies/ReviewResponse.java b/app/src/main/java/com/example/movies/ReviewResponse.java
+new file mode 100644
+--- /dev/null	(date 1724152226145)
++++ b/app/src/main/java/com/example/movies/ReviewResponse.java	(date 1724152226145)
+@@ -0,0 +1,26 @@
++package com.example.movies;
++
++import com.google.gson.annotations.SerializedName;
++
++import java.util.List;
++
++public class ReviewResponse {
++
++    @SerializedName("docs")
++    private List<Review> reviews;
++
++    public ReviewResponse(List<Review> reviews) {
++        this.reviews = reviews;
++    }
++
++    public List<Review> getReviews() {
++        return reviews;
++    }
++
++    @Override
++    public String toString() {
++        return "ReviewResponse{" +
++                "reviews=" + reviews +
++                '}';
++    }
++}
+Index: .idea/.name
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/.name b/.idea/.name
+new file mode 100644
+--- /dev/null	(date 1723903784526)
++++ b/.idea/.name	(date 1723903784526)
+@@ -0,0 +1,1 @@
++Movies
+\ No newline at end of file
+Index: .idea/other.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/other.xml b/.idea/other.xml
+new file mode 100644
+--- /dev/null	(date 1730705245004)
++++ b/.idea/other.xml	(date 1730705245004)
+@@ -0,0 +1,329 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="direct_access_persist.xml">
++    <option name="deviceSelectionList">
++      <list>
++        <PersistentDeviceSelectionData>
++          <option name="api" value="27" />
++          <option name="brand" value="DOCOMO" />
++          <option name="codename" value="F01L" />
++          <option name="id" value="F01L" />
++          <option name="manufacturer" value="FUJITSU" />
++          <option name="name" value="F-01L" />
++          <option name="screenDensity" value="360" />
++          <option name="screenX" value="720" />
++          <option name="screenY" value="1280" />
++        </PersistentDeviceSelectionData>
++        <PersistentDeviceSelectionData>
++          <option name="api" value="28" />
++          <option name="brand" value="DOCOMO" />
++          <option name="codename" value="SH-01L" />
++          <option name="id" value="SH-01L" />
++          <option name="manufacturer" value="SHARP" />
++          <option name="name" value="AQUOS sense2 SH-01L" />
++          <option name="screenDensity" value="480" />
++          <option name="screenX" value="1080" />
++          <option name="screenY" value="2160" />
++        </PersistentDeviceSelectionData>
++        <PersistentDeviceSelectionData>
++          <option name="api" value="34" />
++          <option name="brand" value="Lenovo" />
++          <option name="codename" value="TB370FU" />
++          <option name="id" value="TB370FU" />
++          <option name="manufacturer" value="Lenovo" />
++          <option name="name" value="Tab P12" />
++          <option name="screenDensity" value="340" />
++          <option name="screenX" value="1840" />
++          <option name="screenY" value="2944" />
++        </PersistentDeviceSelectionData>
++        <PersistentDeviceSelectionData>
++          <option name="api" value="31" />
++          <option name="brand" value="samsung" />
++          <option name="codename" value="a51" />
++          <option name="id" value="a51" />
++          <option name="manufacturer" value="Samsung" />
++          <option name="name" value="Galaxy A51" />
++          <option name="screenDensity" value="420" />
++          <option name="screenX" value="1080" />
++          <option name="screenY" value="2400" />
++        </PersistentDeviceSelectionData>
++        <PersistentDeviceSelectionData>
++          <option name="api" value="34" />
++          <option name="brand" value="google" />
++          <option name="codename" value="akita" />
++          <option name="id" value="akita" />
++          <option name="manufacturer" value="Google" />
++          <option name="name" value="Pixel 8a" />
++          <option name="screenDensity" value="420" />
++          <option name="screenX" value="1080" />
++          <option name="screenY" value="2400" />
++        </PersistentDeviceSelectionData>
++        <PersistentDeviceSelectionData>
++          <option name="api" value="33" />
++          <option name="brand" value="samsung" />
++          <option name="codename" value="b0q" />
++          <option name="id" value="b0q" />
++          <option name="manufacturer" value="Samsung" />
++          <option name="name" value="Galaxy S22 Ultra" />
++          <option name="screenDensity" value="600" />
++          <option name="screenX" value="1440" />
++          <option name="screenY" value="3088" />
++        </PersistentDeviceSelectionData>
++        <PersistentDeviceSelectionData>
++          <option name="api" value="32" />
++          <option name="brand" value="google" />
++          <option name="codename" value="bluejay" />
++          <option name="id" value="bluejay" />
++          <option name="manufacturer" value="Google" />
++          <option name="name" value="Pixel 6a" />
++          <option name="screenDensity" value="420" />
++          <option name="screenX" value="1080" />
++          <option name="screenY" value="2400" />
++        </PersistentDeviceSelectionData>
++        <PersistentDeviceSelectionData>
++          <option name="api" value="34" />
++          <option name="brand" value="google" />
++          <option name="codename" value="caiman" />
++          <option name="id" value="caiman" />
++          <option name="manufacturer" value="Google" />
++          <option name="name" value="Pixel 9 Pro" />
++          <option name="screenDensity" value="360" />
++          <option name="screenX" value="960" />
++          <option name="screenY" value="2142" />
++        </PersistentDeviceSelectionData>
++        <PersistentDeviceSelectionData>
++          <option name="api" value="34" />
++          <option name="brand" value="google" />
++          <option name="codename" value="comet" />
++          <option name="id" value="comet" />
++          <option name="manufacturer" value="Google" />
++          <option name="name" value="Pixel 9 Pro Fold" />
++          <option name="screenDensity" value="390" />
++          <option name="screenX" value="2076" />
++          <option name="screenY" value="2152" />
++        </PersistentDeviceSelectionData>
++        <PersistentDeviceSelectionData>
++          <option name="api" value="29" />
++          <option name="brand" value="samsung" />
++          <option name="codename" value="crownqlteue" />
++          <option name="id" value="crownqlteue" />
++          <option name="manufacturer" value="Samsung" />
++          <option name="name" value="Galaxy Note9" />
++          <option name="screenDensity" value="420" />
++          <option name="screenX" value="2220" />
++          <option name="screenY" value="1080" />
++        </PersistentDeviceSelectionData>
++        <PersistentDeviceSelectionData>
++          <option name="api" value="34" />
++          <option name="brand" value="samsung" />
++          <option name="codename" value="dm3q" />
++          <option name="id" value="dm3q" />
++          <option name="manufacturer" value="Samsung" />
++          <option name="name" value="Galaxy S23 Ultra" />
++          <option name="screenDensity" value="600" />
++          <option name="screenX" value="1440" />
++          <option name="screenY" value="3088" />
++        </PersistentDeviceSelectionData>
++        <PersistentDeviceSelectionData>
++          <option name="api" value="34" />
++          <option name="brand" value="samsung" />
++          <option name="codename" value="e1q" />
++          <option name="id" value="e1q" />
++          <option name="manufacturer" value="Samsung" />
++          <option name="name" value="Galaxy S24" />
++          <option name="screenDensity" value="480" />
++          <option name="screenX" value="1080" />
++          <option name="screenY" value="2340" />
++        </PersistentDeviceSelectionData>
++        <PersistentDeviceSelectionData>
++          <option name="api" value="33" />
++          <option name="brand" value="google" />
++          <option name="codename" value="felix" />
++          <option name="id" value="felix" />
++          <option name="manufacturer" value="Google" />
++          <option name="name" value="Pixel Fold" />
++          <option name="screenDensity" value="420" />
++          <option name="screenX" value="2208" />
++          <option name="screenY" value="1840" />
++        </PersistentDeviceSelectionData>
++        <PersistentDeviceSelectionData>
++          <option name="api" value="34" />
++          <option name="brand" value="google" />
++          <option name="codename" value="felix" />
++          <option name="id" value="felix" />
++          <option name="manufacturer" value="Google" />
++          <option name="name" value="Pixel Fold" />
++          <option name="screenDensity" value="420" />
++          <option name="screenX" value="2208" />
++          <option name="screenY" value="1840" />
++        </PersistentDeviceSelectionData>
++        <PersistentDeviceSelectionData>
++          <option name="api" value="33" />
++          <option name="brand" value="google" />
++          <option name="codename" value="felix_camera" />
++          <option name="id" value="felix_camera" />
++          <option name="manufacturer" value="Google" />
++          <option name="name" value="Pixel Fold (Camera-enabled)" />
++          <option name="screenDensity" value="420" />
++          <option name="screenX" value="2208" />
++          <option name="screenY" value="1840" />
++        </PersistentDeviceSelectionData>
++        <PersistentDeviceSelectionData>
++          <option name="api" value="33" />
++          <option name="brand" value="samsung" />
++          <option name="codename" value="gts8uwifi" />
++          <option name="id" value="gts8uwifi" />
++          <option name="manufacturer" value="Samsung" />
++          <option name="name" value="Galaxy Tab S8 Ultra" />
++          <option name="screenDensity" value="320" />
++          <option name="screenX" value="1848" />
++          <option name="screenY" value="2960" />
++        </PersistentDeviceSelectionData>
++        <PersistentDeviceSelectionData>
++          <option name="api" value="34" />
++          <option name="brand" value="google" />
++          <option name="codename" value="husky" />
++          <option name="id" value="husky" />
++          <option name="manufacturer" value="Google" />
++          <option name="name" value="Pixel 8 Pro" />
++          <option name="screenDensity" value="390" />
++          <option name="screenX" value="1008" />
++          <option name="screenY" value="2244" />
++        </PersistentDeviceSelectionData>
++        <PersistentDeviceSelectionData>
++          <option name="api" value="30" />
++          <option name="brand" value="motorola" />
++          <option name="codename" value="java" />
++          <option name="id" value="java" />
++          <option name="manufacturer" value="Motorola" />
++          <option name="name" value="G20" />
++          <option name="screenDensity" value="280" />
++          <option name="screenX" value="720" />
++          <option name="screenY" value="1600" />
++        </PersistentDeviceSelectionData>
++        <PersistentDeviceSelectionData>
++          <option name="api" value="34" />
++          <option name="brand" value="google" />
++          <option name="codename" value="komodo" />
++          <option name="id" value="komodo" />
++          <option name="manufacturer" value="Google" />
++          <option name="name" value="Pixel 9 Pro XL" />
++          <option name="screenDensity" value="360" />
++          <option name="screenX" value="1008" />
++          <option name="screenY" value="2244" />
++        </PersistentDeviceSelectionData>
++        <PersistentDeviceSelectionData>
++          <option name="api" value="33" />
++          <option name="brand" value="google" />
++          <option name="codename" value="lynx" />
++          <option name="id" value="lynx" />
++          <option name="manufacturer" value="Google" />
++          <option name="name" value="Pixel 7a" />
++          <option name="screenDensity" value="420" />
++          <option name="screenX" value="1080" />
++          <option name="screenY" value="2400" />
++        </PersistentDeviceSelectionData>
++        <PersistentDeviceSelectionData>
++          <option name="api" value="31" />
++          <option name="brand" value="google" />
++          <option name="codename" value="oriole" />
++          <option name="id" value="oriole" />
++          <option name="manufacturer" value="Google" />
++          <option name="name" value="Pixel 6" />
++          <option name="screenDensity" value="420" />
++          <option name="screenX" value="1080" />
++          <option name="screenY" value="2400" />
++        </PersistentDeviceSelectionData>
++        <PersistentDeviceSelectionData>
++          <option name="api" value="33" />
++          <option name="brand" value="google" />
++          <option name="codename" value="panther" />
++          <option name="id" value="panther" />
++          <option name="manufacturer" value="Google" />
++          <option name="name" value="Pixel 7" />
++          <option name="screenDensity" value="420" />
++          <option name="screenX" value="1080" />
++          <option name="screenY" value="2400" />
++        </PersistentDeviceSelectionData>
++        <PersistentDeviceSelectionData>
++          <option name="api" value="34" />
++          <option name="brand" value="samsung" />
++          <option name="codename" value="q5q" />
++          <option name="id" value="q5q" />
++          <option name="manufacturer" value="Samsung" />
++          <option name="name" value="Galaxy Z Fold5" />
++          <option name="screenDensity" value="420" />
++          <option name="screenX" value="1812" />
++          <option name="screenY" value="2176" />
++        </PersistentDeviceSelectionData>
++        <PersistentDeviceSelectionData>
++          <option name="api" value="34" />
++          <option name="brand" value="samsung" />
++          <option name="codename" value="q6q" />
++          <option name="id" value="q6q" />
++          <option name="manufacturer" value="Samsung" />
++          <option name="name" value="SM-F956B" />
++          <option name="screenDensity" value="420" />
++          <option name="screenX" value="1856" />
++          <option name="screenY" value="2160" />
++        </PersistentDeviceSelectionData>
++        <PersistentDeviceSelectionData>
++          <option name="api" value="30" />
++          <option name="brand" value="google" />
++          <option name="codename" value="r11" />
++          <option name="id" value="r11" />
++          <option name="manufacturer" value="Google" />
++          <option name="name" value="Pixel Watch" />
++          <option name="screenDensity" value="320" />
++          <option name="screenX" value="384" />
++          <option name="screenY" value="384" />
++          <option name="type" value="WEAR_OS" />
++        </PersistentDeviceSelectionData>
++        <PersistentDeviceSelectionData>
++          <option name="api" value="30" />
++          <option name="brand" value="google" />
++          <option name="codename" value="redfin" />
++          <option name="id" value="redfin" />
++          <option name="manufacturer" value="Google" />
++          <option name="name" value="Pixel 5" />
++          <option name="screenDensity" value="440" />
++          <option name="screenX" value="1080" />
++          <option name="screenY" value="2340" />
++        </PersistentDeviceSelectionData>
++        <PersistentDeviceSelectionData>
++          <option name="api" value="34" />
++          <option name="brand" value="google" />
++          <option name="codename" value="shiba" />
++          <option name="id" value="shiba" />
++          <option name="manufacturer" value="Google" />
++          <option name="name" value="Pixel 8" />
++          <option name="screenDensity" value="420" />
++          <option name="screenX" value="1080" />
++          <option name="screenY" value="2400" />
++        </PersistentDeviceSelectionData>
++        <PersistentDeviceSelectionData>
++          <option name="api" value="33" />
++          <option name="brand" value="google" />
++          <option name="codename" value="tangorpro" />
++          <option name="id" value="tangorpro" />
++          <option name="manufacturer" value="Google" />
++          <option name="name" value="Pixel Tablet" />
++          <option name="screenDensity" value="320" />
++          <option name="screenX" value="1600" />
++          <option name="screenY" value="2560" />
++        </PersistentDeviceSelectionData>
++        <PersistentDeviceSelectionData>
++          <option name="api" value="34" />
++          <option name="brand" value="google" />
++          <option name="codename" value="tokay" />
++          <option name="id" value="tokay" />
++          <option name="manufacturer" value="Google" />
++          <option name="name" value="Pixel 9" />
++          <option name="screenDensity" value="420" />
++          <option name="screenX" value="1080" />
++          <option name="screenY" value="2424" />
++        </PersistentDeviceSelectionData>
++      </list>
++    </option>
++  </component>
++</project>
+\ No newline at end of file
+Index: app/src/main/java/com/example/movies/MovieResponse.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/movies/MovieResponse.java b/app/src/main/java/com/example/movies/MovieResponse.java
+new file mode 100644
+--- /dev/null	(date 1723995043886)
++++ b/app/src/main/java/com/example/movies/MovieResponse.java	(date 1723995043886)
+@@ -0,0 +1,28 @@
++package com.example.movies;
++
++import androidx.annotation.NonNull;
++
++import com.google.gson.annotations.SerializedName;
++
++import java.util.List;
++
++public class MovieResponse {
++
++    @SerializedName("docs")
++    private List<Movie> movies;
++
++    public MovieResponse(List<Movie> movies) {
++        this.movies = movies;
++    }
++
++    public List<Movie> getMovies() {
++        return movies;
++    }
++
++    @Override
++    public String toString() {
++        return "MovieResponse{" +
++                "movies=" + movies +
++                '}';
++    }
++}
+Index: app/src/main/java/com/example/movies/Trailer.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/movies/Trailer.java b/app/src/main/java/com/example/movies/Trailer.java
+new file mode 100644
+--- /dev/null	(date 1724066863549)
++++ b/app/src/main/java/com/example/movies/Trailer.java	(date 1724066863549)
+@@ -0,0 +1,35 @@
++package com.example.movies;
++
++import com.google.gson.annotations.SerializedName;
++
++import java.io.Serializable;
++
++public class Trailer implements Serializable {
++
++    @SerializedName("url")
++    private String url;
++
++    @SerializedName("name")
++    private String name;
++
++    public Trailer(String url, String name) {
++        this.url = url;
++        this.name = name;
++    }
++
++    public String getUrl() {
++        return url;
++    }
++
++    public String getName() {
++        return name;
++    }
++
++    @Override
++    public String toString() {
++        return "Trailer{" +
++                "url='" + url + '\'' +
++                ", name='" + name + '\'' +
++                '}';
++    }
++}
+Index: .idea/gradle.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/gradle.xml b/.idea/gradle.xml
+new file mode 100644
+--- /dev/null	(date 1723990214419)
++++ b/.idea/gradle.xml	(date 1723990214419)
+@@ -0,0 +1,19 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="GradleMigrationSettings" migrationVersion="1" />
++  <component name="GradleSettings">
++    <option name="linkedExternalProjectsSettings">
++      <GradleProjectSettings>
++        <option name="externalProjectPath" value="$PROJECT_DIR$" />
++        <option name="gradleJvm" value="#GRADLE_LOCAL_JAVA_HOME" />
++        <option name="modules">
++          <set>
++            <option value="$PROJECT_DIR$" />
++            <option value="$PROJECT_DIR$/app" />
++          </set>
++        </option>
++        <option name="resolveExternalAnnotations" value="false" />
++      </GradleProjectSettings>
++    </option>
++  </component>
++</project>
+\ No newline at end of file
+Index: app/src/main/java/com/example/movies/TrailersAdapter.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/movies/TrailersAdapter.java b/app/src/main/java/com/example/movies/TrailersAdapter.java
+new file mode 100644
+--- /dev/null	(date 1724148013963)
++++ b/app/src/main/java/com/example/movies/TrailersAdapter.java	(date 1724148013963)
+@@ -0,0 +1,73 @@
++package com.example.movies;
++
++import android.view.LayoutInflater;
++import android.view.View;
++import android.view.ViewGroup;
++import android.widget.TextView;
++
++import androidx.annotation.NonNull;
++import androidx.recyclerview.widget.RecyclerView;
++
++import java.util.ArrayList;
++import java.util.List;
++
++public class TrailersAdapter extends RecyclerView.Adapter<TrailersAdapter.TrailersViewHolder> {
++
++    private List<Trailer> trailers = new ArrayList<>();
++
++    private OnTrailerClickListener onTrailerClickListener;
++
++    public void setTrailers(List<Trailer> trailers) {
++        this.trailers = trailers;
++        notifyDataSetChanged();
++    }
++
++    public void setOnTrailerClickListener(OnTrailerClickListener onTrailerClickListener) {
++        this.onTrailerClickListener = onTrailerClickListener;
++    }
++
++    @NonNull
++    @Override
++    public TrailersViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
++        View view = LayoutInflater.from(parent.getContext()).inflate(
++                R.layout.trailer_item,
++                parent,
++                false
++        );
++        return new TrailersViewHolder(view);
++    }
++
++    @Override
++    public void onBindViewHolder(@NonNull TrailersViewHolder holder, int position) {
++        Trailer trailer = trailers.get(position);
++        holder.textViewTrailerName.setText(trailer.getName());
++        holder.itemView.setOnClickListener(new View.OnClickListener() {
++            @Override
++            public void onClick(View v) {
++                if (onTrailerClickListener != null) {
++                    onTrailerClickListener.onTrailerClick(trailer);
++                }
++            }
++        });
++    }
++
++    @Override
++    public int getItemCount() {
++        return trailers.size();
++    }
++
++    static class TrailersViewHolder extends RecyclerView.ViewHolder {
++
++        private final TextView textViewTrailerName;
++
++        public TrailersViewHolder(@NonNull View itemView) {
++            super(itemView);
++            textViewTrailerName = itemView.findViewById(R.id.textViewTrailerName);
++        }
++    }
++
++    interface OnTrailerClickListener {
++
++        void onTrailerClick(Trailer trailer);
++    }
++}
+Index: gradle/wrapper/gradle-wrapper.properties
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>ISO-8859-1
+===================================================================
+diff --git a/gradle/wrapper/gradle-wrapper.properties b/gradle/wrapper/gradle-wrapper.properties
+new file mode 100644
+--- /dev/null	(date 1723903779828)
++++ b/gradle/wrapper/gradle-wrapper.properties	(date 1723903779828)
+@@ -0,0 +1,6 @@
++#Sat Aug 17 21:09:39 KRAT 2024
++distributionBase=GRADLE_USER_HOME
++distributionPath=wrapper/dists
++distributionUrl=https\://services.gradle.org/distributions/gradle-8.7-bin.zip
++zipStoreBase=GRADLE_USER_HOME
++zipStorePath=wrapper/dists
+Index: app/src/main/java/com/example/movies/ApiFactory.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/movies/ApiFactory.java b/app/src/main/java/com/example/movies/ApiFactory.java
+new file mode 100644
+--- /dev/null	(date 1724152494166)
++++ b/app/src/main/java/com/example/movies/ApiFactory.java	(date 1724152494166)
+@@ -0,0 +1,18 @@
++package com.example.movies;
++
++import retrofit2.Retrofit;
++import retrofit2.adapter.rxjava3.RxJava3CallAdapterFactory;
++import retrofit2.converter.gson.GsonConverterFactory;
++
++public class ApiFactory {
++
++    private static final String BASE_URL = "https://api.kinopoisk.dev/";
++
++    private static final Retrofit retrofit = new Retrofit.Builder()
++            .baseUrl(BASE_URL)
++            .addConverterFactory(GsonConverterFactory.create())
++            .addCallAdapterFactory(RxJava3CallAdapterFactory.create())
++            .build();
++
++    public static final ApiService apiService = retrofit.create(ApiService.class);
++}
+Index: app/src/main/java/com/example/movies/ReviewsAdapter.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/movies/ReviewsAdapter.java b/app/src/main/java/com/example/movies/ReviewsAdapter.java
+new file mode 100644
+--- /dev/null	(date 1724157401083)
++++ b/app/src/main/java/com/example/movies/ReviewsAdapter.java	(date 1724157401083)
+@@ -0,0 +1,79 @@
++package com.example.movies;
++
++import android.graphics.Color;
++import android.view.LayoutInflater;
++import android.view.View;
++import android.view.ViewGroup;
++import android.widget.LinearLayout;
++import android.widget.TextView;
++
++import androidx.annotation.NonNull;
++import androidx.core.content.ContextCompat;
++import androidx.recyclerview.widget.RecyclerView;
++
++import java.util.ArrayList;
++import java.util.List;
++
++public class ReviewsAdapter extends RecyclerView.Adapter<ReviewsAdapter.ReviewsViewHolder> {
++
++    private List<Review> reviews = new ArrayList<>();
++
++    private static final String TYPE_POSITIVE = "Позитивный";
++    private static final String TYPE_NEUTRAL = "Нейтральный";
++
++    public void setReviews(List<Review> reviews) {
++        this.reviews = reviews;
++        notifyDataSetChanged();
++    }
++
++    @NonNull
++    @Override
++    public ReviewsViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
++        View view = LayoutInflater.from(parent.getContext()).inflate(
++                R.layout.review_item,
++                parent,
++                false
++        );
++        return new ReviewsViewHolder(view);
++    }
++
++    @Override
++    public void onBindViewHolder(@NonNull ReviewsViewHolder holder, int position) {
++        Review review = reviews.get(position);
++        holder.textViewAuthor.setText(review.getAuthor());
++        holder.textViewReview.setText(review.getReview());
++
++        String type = review.getType();
++        int colorResIs = android.R.color.holo_red_light;
++        switch (type) {
++            case TYPE_POSITIVE:
++                colorResIs = android.R.color.holo_green_light;
++                break;
++            case TYPE_NEUTRAL:
++                colorResIs = android.R.color.holo_orange_light;
++                break;
++            default: colorResIs = android.R.color.holo_red_light;
++        }
++        int color = ContextCompat.getColor(holder.itemView.getContext(), colorResIs);
++        holder.linearLayoutReview.setBackgroundColor(color);
++    }
++
++    @Override
++    public int getItemCount() {
++        return reviews.size();
++    }
++
++    static class ReviewsViewHolder extends RecyclerView.ViewHolder {
++
++        private final TextView textViewAuthor;
++        private final TextView textViewReview;
++        private final LinearLayout linearLayoutReview;
++
++        public ReviewsViewHolder(@NonNull View itemView) {
++            super(itemView);
++            linearLayoutReview = itemView.findViewById(R.id.linearLayoutReview);
++            textViewAuthor = itemView.findViewById(R.id.textViewAuthor);
++            textViewReview = itemView.findViewById(R.id.textViewReview);
++        }
++    }
++}
+Index: app/src/main/java/com/example/movies/MovieDao.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/movies/MovieDao.java b/app/src/main/java/com/example/movies/MovieDao.java
+new file mode 100644
+--- /dev/null	(date 1724168079993)
++++ b/app/src/main/java/com/example/movies/MovieDao.java	(date 1724168079993)
+@@ -0,0 +1,27 @@
++package com.example.movies;
++
++import androidx.lifecycle.LiveData;
++import androidx.room.Dao;
++import androidx.room.Delete;
++import androidx.room.Insert;
++import androidx.room.Query;
++
++import java.util.List;
++
++import io.reactivex.rxjava3.core.Completable;
++
++@Dao
++public interface MovieDao {
++
++    @Query("SELECT * FROM favourite_movies")
++    LiveData<List<Movie>> getAllFavouriteMovies();
++
++    @Query("SELECT * FROM favourite_movies WHERE id = :movieId")
++    LiveData<Movie> getFavouriteMovie(int movieId);
++
++    @Insert
++    Completable insertMovie(Movie movie);
++
++    @Query("DELETE FROM favourite_movies WHERE id = :movieId")
++    Completable removeMovie(int movieId);
++}
+Index: app/src/main/java/com/example/movies/Movie.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/movies/Movie.java b/app/src/main/java/com/example/movies/Movie.java
+new file mode 100644
+--- /dev/null	(date 1724168185387)
++++ b/app/src/main/java/com/example/movies/Movie.java	(date 1724168185387)
+@@ -0,0 +1,74 @@
++package com.example.movies;
++
++import androidx.room.Embedded;
++import androidx.room.Entity;
++import androidx.room.PrimaryKey;
++
++import com.google.gson.annotations.SerializedName;
++
++import java.io.Serializable;
++
++@Entity(tableName = "favourite_movies")
++public class Movie implements Serializable {
++
++    @PrimaryKey
++    @SerializedName("id")
++    private int id;
++    @SerializedName("name")
++    private String name;
++    @SerializedName("description")
++    private String description;
++    @SerializedName("year")
++    private int year;
++    @SerializedName("poster")
++    @Embedded
++    private Poster poster;
++    @SerializedName("rating")
++    @Embedded
++    private Rating rating;
++
++    public Movie(int id, String name, String description, int year, Poster poster, Rating rating) {
++        this.id = id;
++        this.name = name;
++        this.description = description;
++        this.year = year;
++        this.poster = poster;
++        this.rating = rating;
++    }
++
++    public int getId() {
++        return id;
++    }
++
++    public String getName() {
++        return name;
++    }
++
++    public String getDescription() {
++        return description;
++    }
++
++    public int getYear() {
++        return year;
++    }
++
++    public Poster getPoster() {
++        return poster;
++    }
++
++    public Rating getRating() {
++        return rating;
++    }
++
++    @Override
++    public String toString() {
++        return "Movie{" +
++                "id=" + id +
++                ", name='" + name + '\'' +
++                ", description='" + description + '\'' +
++                ", year=" + year +
++                ", poster=" + poster +
++                ", rating=" + rating +
++                '}';
++    }
++}
+Index: app/src/main/java/com/example/movies/MovieDataBase.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/movies/MovieDataBase.java b/app/src/main/java/com/example/movies/MovieDataBase.java
+new file mode 100644
+--- /dev/null	(date 1724168309702)
++++ b/app/src/main/java/com/example/movies/MovieDataBase.java	(date 1724168309702)
+@@ -0,0 +1,28 @@
++package com.example.movies;
++
++import android.app.Application;
++
++import androidx.room.Dao;
++import androidx.room.Database;
++import androidx.room.Room;
++import androidx.room.RoomDatabase;
++
++@Database(entities = {Movie.class}, version = 1, exportSchema = false)
++public abstract class MovieDataBase extends RoomDatabase {
++
++    private static final String DB_NAME = "movie.dp";
++    private static MovieDataBase instance = null;
++
++    public static MovieDataBase getInstance(Application application) {
++        if (instance == null) {
++            instance = Room.databaseBuilder(
++                    application,
++                    MovieDataBase.class,
++                    DB_NAME
++            ).build();
++        }
++        return instance;
++    }
++
++    abstract MovieDao movieDao();
++}
+Index: app/src/main/java/com/example/movies/Rating.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/movies/Rating.java b/app/src/main/java/com/example/movies/Rating.java
+new file mode 100644
+--- /dev/null	(date 1724168620354)
++++ b/app/src/main/java/com/example/movies/Rating.java	(date 1724168620354)
+@@ -0,0 +1,26 @@
++package com.example.movies;
++
++import com.google.gson.annotations.SerializedName;
++
++import java.io.Serializable;
++
++public class Rating implements Serializable {
++
++    @SerializedName("kp")
++    private double kp;
++
++    public Rating(double kp) {
++        this.kp = kp;
++    }
++
++    public double getKp() {
++        return kp;
++    }
++
++    @Override
++    public String toString() {
++        return "Rating{" +
++                "kp='" + kp + '\'' +
++                '}';
++    }
++}
+Index: app/src/main/java/com/example/movies/MovieDetailViewModel.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/movies/MovieDetailViewModel.java b/app/src/main/java/com/example/movies/MovieDetailViewModel.java
+new file mode 100644
+--- /dev/null	(date 1724169823377)
++++ b/app/src/main/java/com/example/movies/MovieDetailViewModel.java	(date 1724169823377)
+@@ -0,0 +1,115 @@
++package com.example.movies;
++
++import android.app.Application;
++import android.util.Log;
++
++import androidx.annotation.NonNull;
++import androidx.lifecycle.AndroidViewModel;
++import androidx.lifecycle.LiveData;
++import androidx.lifecycle.MutableLiveData;
++
++import java.util.Collections;
++import java.util.List;
++
++import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
++import io.reactivex.rxjava3.disposables.CompositeDisposable;
++import io.reactivex.rxjava3.disposables.Disposable;
++import io.reactivex.rxjava3.functions.Consumer;
++import io.reactivex.rxjava3.functions.Function;
++import io.reactivex.rxjava3.schedulers.Schedulers;
++
++public class MovieDetailViewModel extends AndroidViewModel {
++
++    private static final String TAG = "MovieDetailViewModel";
++
++    private final MutableLiveData<List<Trailer>> trailers = new MutableLiveData<List<Trailer>>();
++    private final MutableLiveData<List<Review>> reviews = new MutableLiveData<List<Review>>();
++    private final CompositeDisposable compositeDisposable = new CompositeDisposable();
++
++    private final MovieDao movieDao;
++
++    public MovieDetailViewModel(@NonNull Application application) {
++        super(application);
++        movieDao = MovieDataBase.getInstance(application).movieDao();
++    }
++
++    public LiveData<Movie> getFavouriteMovie(int movieId) {
++        return movieDao.getFavouriteMovie(movieId);
++    }
++
++    public MutableLiveData<List<Review>> getReviews() {
++        return reviews;
++    }
++
++    public void loadReviews(int id) {
++        Disposable disposable = ApiFactory.apiService.loadReviews(id)
++                .subscribeOn(Schedulers.io())
++                .observeOn(AndroidSchedulers.mainThread())
++                .map(new Function<ReviewResponse, List<Review>>() {
++                    @Override
++                    public List<Review> apply(ReviewResponse reviewResponse) throws Throwable {
++                        return reviewResponse.getReviews();
++                    }
++                })
++                .subscribe(new Consumer<List<Review>>() {
++                    @Override
++                    public void accept(List<Review> reviewList) throws Throwable {
++                        reviews.setValue(reviewList);
++                    }
++                }, new Consumer<Throwable>() {
++                    @Override
++                    public void accept(Throwable throwable) throws Throwable {
++                        Log.d(TAG, throwable.toString());
++                    }
++                });
++        compositeDisposable.add(disposable);
++    }
++
++    public void insertMovie(Movie movie) {
++        Disposable disposable = movieDao.insertMovie(movie)
++                .subscribeOn(Schedulers.io())
++                .subscribe();
++        compositeDisposable.add(disposable);
++    }
++
++    public void removeMovie(int movieId) {
++        Disposable disposable = movieDao.removeMovie(movieId)
++                .subscribeOn(Schedulers.io())
++                .subscribe();
++        compositeDisposable.add(disposable);
++    }
++
++    public LiveData<List<Trailer>> getTrailers() {
++        return trailers;
++    }
++
++    public void loadTrailers(int id) {
++        Disposable disposable = ApiFactory.apiService.loadTrailers(id)
++                .subscribeOn(Schedulers.io())
++                .observeOn(AndroidSchedulers.mainThread())
++                .map(new Function<TrailerResponse, List<Trailer>>() {
++                    @Override
++                    public List<Trailer> apply(TrailerResponse trailerResponse) throws Throwable {
++                        return trailerResponse.getTrailersList().getTrailers();
++                    }
++                })
++                .subscribe(new Consumer<List<Trailer>>() {
++                    @Override
++                    public void accept(List<Trailer> trailerList) throws Throwable {
++                        trailers.setValue(trailerList);
++                    }
++                }, new Consumer<Throwable>() {
++                    @Override
++                    public void accept(Throwable throwable) throws Throwable {
++                        Log.d(TAG, throwable.toString());
++                    }
++                });
++        compositeDisposable.add(disposable);
++    }
++
++    @Override
++    protected void onCleared() {
++        super.onCleared();
++        compositeDisposable.dispose();
++    }
++}
+Index: app/src/main/java/com/example/movies/MovieDetailActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/movies/MovieDetailActivity.java b/app/src/main/java/com/example/movies/MovieDetailActivity.java
+new file mode 100644
+--- /dev/null	(date 1724169823368)
++++ b/app/src/main/java/com/example/movies/MovieDetailActivity.java	(date 1724169823368)
+@@ -0,0 +1,141 @@
++package com.example.movies;
++
++import android.content.Context;
++import android.content.Intent;
++import android.graphics.drawable.Drawable;
++import android.net.Uri;
++import android.os.Bundle;
++import android.util.Log;
++import android.view.View;
++import android.widget.ImageView;
++import android.widget.TextView;
++
++import androidx.activity.EdgeToEdge;
++import androidx.appcompat.app.AppCompatActivity;
++import androidx.core.content.ContextCompat;
++import androidx.core.graphics.Insets;
++import androidx.core.view.ViewCompat;
++import androidx.core.view.WindowInsetsCompat;
++import androidx.lifecycle.Observer;
++import androidx.lifecycle.ViewModelProvider;
++import androidx.recyclerview.widget.RecyclerView;
++
++import com.bumptech.glide.Glide;
++
++import java.util.List;
++
++import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
++import io.reactivex.rxjava3.functions.Consumer;
++import io.reactivex.rxjava3.schedulers.Schedulers;
++
++public class MovieDetailActivity extends AppCompatActivity {
++
++    private static final String TAG = "MovieDetailActivity";
++
++    private static final String MOVIE_KEY = "movie";
++
++    private MovieDetailViewModel viewModel;
++
++    private ImageView imageViewPoster;
++    private TextView textViewTitle;
++    private TextView textViewYear;
++    private TextView textViewDescription;
++    private RecyclerView recyclerViewTrailers;
++    private RecyclerView recyclerViewReviews;
++    private TrailersAdapter trailersAdapter;
++    private ReviewsAdapter reviewsAdapter;
++    private ImageView imageViewStar;
++
++    @Override
++    protected void onCreate(Bundle savedInstanceState) {
++        super.onCreate(savedInstanceState);
++        setContentView(R.layout.activity_movie_detail);
++        initViews();
++        trailersAdapter = new TrailersAdapter();
++        reviewsAdapter = new ReviewsAdapter();
++        recyclerViewTrailers.setAdapter(trailersAdapter);
++        recyclerViewReviews.setAdapter(reviewsAdapter);
++
++        viewModel = new ViewModelProvider(this).get(MovieDetailViewModel.class);
++
++        Movie movie = (Movie) getIntent().getSerializableExtra(MOVIE_KEY);
++
++        Glide.with(this)
++                .load(movie.getPoster().getUrl())
++                .into(imageViewPoster);
++        textViewTitle.setText(movie.getName());
++        textViewYear.setText(String.valueOf(movie.getYear()));
++        textViewDescription.setText(movie.getDescription());
++
++        viewModel.loadTrailers(movie.getId());
++        viewModel.getTrailers().observe(this, new Observer<List<Trailer>>() {
++            @Override
++            public void onChanged(List<Trailer> trailers) {
++                trailersAdapter.setTrailers(trailers);
++            }
++        });
++        trailersAdapter.setOnTrailerClickListener(new TrailersAdapter.OnTrailerClickListener() {
++            @Override
++            public void onTrailerClick(Trailer trailer) {
++                Intent intent = new Intent(Intent.ACTION_VIEW);
++                intent.setData(Uri.parse(trailer.getUrl()));
++                startActivity(intent);
++            }
++        });
++        viewModel.getReviews().observe(this, new Observer<List<Review>>() {
++            @Override
++            public void onChanged(List<Review> reviewList) {
++                reviewsAdapter.setReviews(reviewList);
++            }
++        });
++        viewModel.loadReviews(movie.getId());
++
++        Drawable starOff = ContextCompat.getDrawable(
++                MovieDetailActivity.this,
++                android.R.drawable.star_big_off
++        );
++        Drawable starOn = ContextCompat.getDrawable(
++                MovieDetailActivity.this,
++                android.R.drawable.star_big_on
++        );
++
++        viewModel.getFavouriteMovie(movie.getId()).observe(this, new Observer<Movie>() {
++            @Override
++            public void onChanged(Movie movieFromDb) {
++                if (movieFromDb == null) {
++                    imageViewStar.setImageDrawable(starOff);
++                    imageViewStar.setOnClickListener(new View.OnClickListener() {
++                        @Override
++                        public void onClick(View view) {
++                            viewModel.insertMovie(movie);
++                        }
++                    });
++                } else {
++                    imageViewStar.setImageDrawable(starOn);
++                    imageViewStar.setOnClickListener(new View.OnClickListener() {
++                        @Override
++                        public void onClick(View view) {
++                            viewModel.removeMovie(movie.getId());
++                        }
++                    });
++                }
++            }
++        });
++    }
++
++    private void initViews() {
++        imageViewPoster = findViewById(R.id.imageViewPoster);
++        textViewTitle = findViewById(R.id.textViewTitle);
++        textViewYear = findViewById(R.id.textViewYear);
++        textViewDescription = findViewById(R.id.textViewDescription);
++        recyclerViewTrailers = findViewById(R.id.recyclerViewTrailers);
++        recyclerViewReviews = findViewById(R.id.recyclerViewReviews);
++        imageViewStar = findViewById(R.id.imageViewStar);
++    }
++
++    public static Intent newIntent(Context context, Movie movie) {
++        Intent intent = new Intent(context, MovieDetailActivity.class);
++        intent.putExtra(MOVIE_KEY, movie);
++        return intent;
++    }
++}
+\ No newline at end of file
+Index: app/src/main/java/com/example/movies/ApiService.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/movies/ApiService.java b/app/src/main/java/com/example/movies/ApiService.java
+new file mode 100644
+--- /dev/null	(date 1724169881977)
++++ b/app/src/main/java/com/example/movies/ApiService.java	(date 1724169881977)
+@@ -0,0 +1,24 @@
++package com.example.movies;
++
++import io.reactivex.rxjava3.core.Single;
++import retrofit2.http.GET;
++import retrofit2.http.Headers;
++import retrofit2.http.Path;
++import retrofit2.http.Query;
++
++public interface ApiService {
++
++    String TOKEN = "X8TB5K5-PVKM3AY-JSGEKTZ-DJY0YM2";
++
++    @GET("v1.4/movie?limit=50&year=2000-2024&rating.kp=7-10&sortField=votes.kp&sortType=-1")
++    @Headers("X-API-KEY:" + TOKEN)
++    Single<MovieResponse> loadMovies(@Query("page") int page);
++
++    @GET("v1.4/movie/{id}")
++    @Headers("X-API-KEY:" + TOKEN)
++    Single<TrailerResponse> loadTrailers(@Path("id") int id);
++
++    @GET("v1/review?limit=10")
++    @Headers("X-API-KEY:" + TOKEN)
++    Single<ReviewResponse> loadReviews(@Query("movieId") int id);
++}
+Index: app/src/main/java/com/example/movies/MoviesAdapter.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/movies/MoviesAdapter.java b/app/src/main/java/com/example/movies/MoviesAdapter.java
+new file mode 100644
+--- /dev/null	(date 1724168632009)
++++ b/app/src/main/java/com/example/movies/MoviesAdapter.java	(date 1724168632009)
+@@ -0,0 +1,113 @@
++package com.example.movies;
++
++import android.graphics.drawable.Drawable;
++import android.util.Log;
++import android.view.LayoutInflater;
++import android.view.View;
++import android.view.ViewGroup;
++import android.widget.ImageView;
++import android.widget.TextView;
++
++import androidx.annotation.NonNull;
++import androidx.core.content.ContextCompat;
++import androidx.recyclerview.widget.RecyclerView;
++
++import com.bumptech.glide.Glide;
++
++import java.util.ArrayList;
++import java.util.List;
++
++public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MovieViewHolder> {
++
++    private List<Movie> movies = new ArrayList<>();
++
++    private OnReachEndListener onReachEndListener;
++
++    private OnMovieClickListener onMovieClickListener;
++
++    public void setOnReachEndListener(OnReachEndListener onReachEndListener) {
++        this.onReachEndListener = onReachEndListener;
++    }
++
++    public void setOnMovieClickListener(OnMovieClickListener onMovieClickListener) {
++        this.onMovieClickListener = onMovieClickListener;
++    }
++
++    public void setMovies(List<Movie> movies) {
++        this.movies = movies;
++        notifyDataSetChanged();
++    }
++
++    @NonNull
++    @Override
++    public MovieViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
++        View view = LayoutInflater.from(parent.getContext()).inflate(
++                R.layout.movie_item,
++                parent,
++                false
++        );
++        return new MovieViewHolder(view);
++    }
++
++    @Override
++    public void onBindViewHolder(@NonNull MovieViewHolder holder, int position) {
++        Log.d("MoviesAdapter", "onBindViewHolder:" + position);
++        Movie movie = movies.get(position);
++        Glide.with(holder.itemView)
++                .load(movie.getPoster().getUrl())
++                .into(holder.imageViewPoster);
++
++        double rating = movie.getRating().getKp();
++        int backgroundId;
++        if (rating > 7) {
++            backgroundId = R.drawable.circle_green;
++        }else if (rating > 4) {
++            backgroundId = R.drawable.circle_orange;
++        }else {
++            backgroundId = R.drawable.circle_red;
++        }
++        Drawable background = ContextCompat.getDrawable(holder.itemView.getContext(), backgroundId);
++        holder.textViewRating.setBackground(background);
++        holder.textViewRating.setText(String.valueOf(rating).substring(0, 3));
++
++        if (position >= movies.size() - 10 && onReachEndListener != null) {
++           onReachEndListener.onReachEnd();
++        }
++
++        holder.itemView.setOnClickListener(new View.OnClickListener() {
++            @Override
++            public void onClick(View v) {
++                if (onMovieClickListener != null) {
++                    onMovieClickListener.onMovieClick(movie);
++                }
++            }
++        });
++    }
++
++    @Override
++    public int getItemCount() {
++        return movies.size();
++    }
++
++    interface OnReachEndListener {
++
++        void onReachEnd();
++    }
++
++    interface OnMovieClickListener {
++
++        void onMovieClick(Movie movie);
++    }
++
++    static class MovieViewHolder extends RecyclerView.ViewHolder {
++
++        private final ImageView imageViewPoster;
++        private final TextView textViewRating;
++
++        public MovieViewHolder(@NonNull View itemView) {
++            super(itemView);
++            imageViewPoster = itemView.findViewById(R.id.imageViewPoster);
++            textViewRating = itemView.findViewById(R.id.textViewRating);
++        }
++    }
++}
+Index: app/src/main/java/com/example/movies/FavouriteMoviesActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/movies/FavouriteMoviesActivity.java b/app/src/main/java/com/example/movies/FavouriteMoviesActivity.java
+new file mode 100644
+--- /dev/null	(date 1724170977939)
++++ b/app/src/main/java/com/example/movies/FavouriteMoviesActivity.java	(date 1724170977939)
+@@ -0,0 +1,55 @@
++package com.example.movies;
++
++import android.content.Context;
++import android.content.Intent;
++import android.os.Bundle;
++
++import androidx.activity.EdgeToEdge;
++import androidx.appcompat.app.AppCompatActivity;
++import androidx.core.graphics.Insets;
++import androidx.core.view.ViewCompat;
++import androidx.core.view.WindowInsetsCompat;
++import androidx.lifecycle.Observer;
++import androidx.lifecycle.ViewModelProvider;
++import androidx.recyclerview.widget.GridLayoutManager;
++import androidx.recyclerview.widget.RecyclerView;
++
++import java.util.List;
++
++public class FavouriteMoviesActivity extends AppCompatActivity {
++
++    @Override
++    protected void onCreate(Bundle savedInstanceState) {
++        super.onCreate(savedInstanceState);
++        setContentView(R.layout.activity_favourite_movies);
++
++        RecyclerView recyclerViewMovies = findViewById(R.id.recyclerViewMovies);
++        MoviesAdapter moviesAdapter = new MoviesAdapter();
++        recyclerViewMovies.setLayoutManager(new GridLayoutManager(this, 2));
++        recyclerViewMovies.setAdapter(moviesAdapter);
++        moviesAdapter.setOnMovieClickListener(new MoviesAdapter.OnMovieClickListener() {
++            @Override
++            public void onMovieClick(Movie movie) {
++                Intent intent = MovieDetailActivity.newIntent(
++                        FavouriteMoviesActivity.this,
++                        movie
++                );
++                startActivity(intent);
++            }
++        });
++
++        FavouriteMoviesViewModel viewModel = new ViewModelProvider(this).get(
++                FavouriteMoviesViewModel.class
++        );
++        viewModel.getMovies().observe(this, new Observer<List<Movie>>() {
++            @Override
++            public void onChanged(List<Movie> movies) {
++                moviesAdapter.setMovies(movies);
++            }
++        });
++    }
++
++    public static Intent newIntent(Context context) {
++        return new Intent(context, FavouriteMoviesActivity.class);
++    }
++}
+\ No newline at end of file
+Index: app/src/main/java/com/example/movies/FavouriteMoviesViewModel.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/movies/FavouriteMoviesViewModel.java b/app/src/main/java/com/example/movies/FavouriteMoviesViewModel.java
+new file mode 100644
+--- /dev/null	(date 1724170881021)
++++ b/app/src/main/java/com/example/movies/FavouriteMoviesViewModel.java	(date 1724170881021)
+@@ -0,0 +1,24 @@
++package com.example.movies;
++
++import android.app.Application;
++
++import androidx.annotation.NonNull;
++import androidx.lifecycle.AndroidViewModel;
++import androidx.lifecycle.Lifecycle;
++import androidx.lifecycle.LiveData;
++
++import java.util.List;
++
++public class FavouriteMoviesViewModel extends AndroidViewModel {
++
++    private final MovieDao movieDao;
++
++    public FavouriteMoviesViewModel(@NonNull Application application) {
++        super(application);
++        movieDao = MovieDataBase.getInstance(application).movieDao();
++    }
++
++    public LiveData<List<Movie>> getMovies() {
++        return movieDao.getAllFavouriteMovies();
++    }
++}
